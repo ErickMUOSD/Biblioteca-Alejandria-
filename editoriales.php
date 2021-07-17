@@ -45,7 +45,7 @@
             <div class='col-6'>
                     <div class='card'>
                         <div class='card-header'>
-                        <i class="bi-ui-checks"></i>Editoriales
+                        <i class="bi bi-book-half"></i>Editoriales
                         </div>
                         <div class='card-body'>
                             <a class="float-end btn btn-primary btn-sm" href="editoriales_crear.php" title="Crear editorial">
@@ -55,6 +55,8 @@
                             <thead>
                                 <tr>
                                     <th style="width=80%;">Editoriales</th>
+                                    <th style="width=80%;">Estatus</th>
+                                    <th style="width=20%;">&nbsp;</th>
                                     <th style="width=20%;">&nbsp;</th>
                                 </tr>
                             </thead>
@@ -69,8 +71,9 @@
                                     echo <<<fin
                                 <tr>
                                     <td>{$editorial['nombre_editorial']}</td>
+                                    <td>{$editorial['estatus_editorial']}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="editoriales_crear.php?id={$editorial['id_editorial']}" title="Clic para editar categoria">
+                                        <a class="btn btn-primary btn-sm" href="editoriales_editar.php?id_editorial={$editorial['id_editorial']}" title="Clic para editar categoria">
                                             <i class="bi-pencil-square"></i> Editar
                                         </a>
                                     </td>

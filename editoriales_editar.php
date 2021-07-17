@@ -92,22 +92,22 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
                     }else {
                         // es post y todo esta bien creamos
                         require_once './conexion.php';
-                            //Crear 
-                            $sql = 'insert into editoriales (nombre_editorial,estatus_editorial) values (:nombre_editorial, "Activo")';
+                            //Actualizar
+                            $sql = 'update editoriales set nombre_editorial = :nombre_editorial where id_editorial = :id_editorial';
                             $sentencia = $conexion->prepare($sql);
                             $sentencia ->bindValue(':nombre_editorial', $_POST["nombre_editorial"],PDO::PARAM_STR);
+                            $sentencia ->bindValue(':id_editorial', $_GET["id_editorial"],PDO::PARAM_INT);
                             $sentencia ->execute();    
-                            echo '<h6>Categoria Creada</h6>';
+                            echo '<h6>Editorial Actualizada</h6>';
                             echo '<div><a href="editoriales.php" class="btn btn-secondary btn-sm">Editoriales</a></div>';
-                        
-                    }
-                  ?>  
-                </div>
-            </div> 
-        </div>
-        <div class="col-3"></div>
-    </div>
-</div>    
+                }
+                    ?>  
+                  </div>
+              </div> 
+          </div>
+          <div class="col-3"></div>
+      </div>
+  </div>    
 <script src="js/jquery-3.6.0.min.js"></script> 
 </body>
 </html>
