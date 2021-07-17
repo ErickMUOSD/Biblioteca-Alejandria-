@@ -1,0 +1,40 @@
+body, html {
+    height: 100%;
+    background-color: #efeff0;
+}
+
+h1 {
+    margin-left: 30px 0;
+}
+
+.nav-group {
+    background-color: #054082;
+    height: 80px;
+    border-bottom: 1px solid rgba(70, 140, 207, 0.5);
+}
+
+.section-upload-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #054082;
+    color: white;
+    margin-right: 30px;
+    border-radius: 7%;
+    -webkit-border-radius: 7%;
+    -moz-border-radius: 7%;
+    -ms-border-radius: 7%;
+    -o-border-radius: 7%;
+}
+
+img {
+    width: 80px;
+}
+
+tbody>tr:hover {
+    background-color: #054082;
+    color: white;
+    opacity: 0.8;
+}
