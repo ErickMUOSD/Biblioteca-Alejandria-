@@ -1,5 +1,6 @@
 body, html {
     height: 100%;
+    width: 100%;
     background-color: #efeff0;
 }
 
@@ -37,4 +38,28 @@ tbody>tr:hover {
     background-color: #054082;
     color: white;
     opacity: 0.8;
+}
+
+.vertical-page-style {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 100vh;
+    animation-name: appearPage;
+    animation-duration: 2s;
+    max-width: 400px;
+}
+
+@keyframes appearPage {
+    from {
+        width: 0;
+    }
+    to {
+        width: 400px;
+      
+    }
 }
