@@ -34,14 +34,36 @@ img {
     width: 80px;
 }
 
-tbody>tr:hover {
+.tr-style:hover {
     background-color: #054082;
     color: white;
     opacity: 0.8;
+    cursor: pointer;
+}
+
+.disable-hover {
+    pointer-events: none;
+}
+
+.vertical-page-body {
+    overflow: auto;
+    height: 90%;
+}
+
+.overlay-page-style {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
 }
 
 .vertical-page-style {
-    overflow: hidden;
+    overflow: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -50,8 +72,13 @@ tbody>tr:hover {
     background-color: white;
     height: 100vh;
     animation-name: appearPage;
-    animation-duration: 2s;
-    max-width: 400px;
+    animation-duration: 1s;
+    max-width: 500px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vertical-page-hide>* {
+    display: none;
 }
 
 @keyframes appearPage {
@@ -59,7 +86,23 @@ tbody>tr:hover {
         width: 0;
     }
     to {
-        width: 400px;
-      
+        width: 500px;
     }
+}
+
+.vertical-header {
+    background-color: #054082;
+    width: 1005;
+    height: 80px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.vertical-page-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.vertical-page-body::-webkit-scrollbar-thumb {
+    /* background: #FEC529; */
+    background-color: #054082;
 }

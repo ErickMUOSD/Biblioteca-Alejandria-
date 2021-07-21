@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/books.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"> </script>
+    <script src="js/book_form_animation.js"></script>
 
     <title>Libros</title>
 
@@ -16,36 +18,9 @@
 
 <body>
 
-    <!-- Barra de navegacion -->
-    <!-- <nav class="navbar navbar-expand-lg pl-4 nav-group  flex-sm-row">
-
-        <a class="navbar-brand fw-bold fs-1 text-light">Biblioteca Alejandría</a>
-
-        <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav" style="  color: white;">
-            <ul class="navbar-nav fl">
-                <li class="nav-item ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Libros</a>
-                </li>
-                <li class="nav-item  ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Categorias</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Editoriales</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Prestamos</a>
-                </li>
-                <li class="nav-item   ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Consultas</a>
-                </li>
-
-            </ul>
-        </div>
-
-    </nav> -->
     <?php
+    require_once('./framgents-html/navegation.html');
 
-    require_once('/fsgraments-htm/navegation.html');
     ?>
 
     <div class="container-fluid ">
@@ -54,11 +29,13 @@
             <div class="card-body">
                 <div class="section-upload-btn">
                     <h1>Libros</h1>
-                    <div id="vertical-page">
-                        <h3>Modify</h3>
-                    </div>
-                    <button class="btn" onclick="animationForm()"><i class="bi bi-plus-square mr-2 "></i>
+                    
+                    <?php
+                    require_once('./framgents-html/vertical-form.html');
+                    ?>
+                    <button class="btn" onclick="animationFormOn()"><i class="bi bi-plus-square mr-2 "></i>
                         Añadir</button>
+
                 </div>
 
 
@@ -79,64 +56,15 @@
 
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="images/libro.jpg" alt=""></td>
-                            <td class="align-middle">El extranjero</td>
-                            <td class="align-middle">Albert Camus</td>
-                            <td class="align-middle">Español</td>
-                            <td class="align-middle">Albert Camus (1913-1960) no sólo fue uno de los escritores más
-                                prestigiosos de la generación que llegó a la madurez entre las ruinas, la frustración y
-                                la desesperanza de la Europa demolida por las dos Guerras Mundiales, sino que el paso
-                                del tiempo agiganta cada vez más su figura excepcional y el valor de su obra.</td>
-                            <td class="align-middle">149</td>
-                            <td class="align-middle">2019</td>
-                            <td class="align-middle">Prestamo</td>
-                            <td class="align-middle">90.00</td>
-                            <td class="align-middle">10</td>
-
-                        </tr>
-                        <tr>
-                            <td><img src="images/libro.jpg" alt=""></td>
-                            <td class="align-middle">El extranjero</td>
-                            <td class="align-middle">Albert Camus</td>
-                            <td class="align-middle">Español</td>
-                            <td class="align-middle">Albert Camus (1913-1960) no sólo fue uno de los escritores más
-                                prestigiosos de la generación que llegó a la madurez entre las ruinas, la frustración y
-                                la desesperanza de la Europa demolida por las dos Guerras Mundiales, sino que el paso
-                                del tiempo agiganta cada vez más su figura excepcional y el valor de su obra.</td>
-                            <td class="align-middle">149</td>
-                            <td class="align-middle">2019</td>
-                            <td class="align-middle">Prestamo</td>
-                            <td class="align-middle">90.00</td>
-                            <td class="align-middle">10</td>
-
-                        </tr>
-                        <tr>
-                            <td><img src="images/libro.jpg" alt=""></td>
-                            <td class="align-middle">El extranjero</td>
-                            <td class="align-middle">Albert Camus</td>
-                            <td class="align-middle">Español</td>
-                            <td class="align-middle">Albert Camus (1913-1960) no sólo fue uno de los escritores más
-                                prestigiosos de la generación que llegó a la madurez entre las ruinas, la frustración y
-                                la desesperanza de la Europa demolida por las dos Guerras Mundiales, sino que el paso
-                                del tiempo agiganta cada vez más su figura excepcional y el valor de su obra.</td>
-                            <td class="align-middle">149</td>
-                            <td class="align-middle">2019</td>
-                            <td class="align-middle">Prestamo</td>
-                            <td class="align-middle">90.00</td>
-                            <td class="align-middle">10</td>
-
-                        </tr>
-
-
+                    <tbody id="tbody">
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
 
-    <script src="js/book_form_animation.js"></script>
+    <script src="js/libros_datos.js"></script>
 </body>
 
 </html>
