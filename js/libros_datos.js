@@ -3,7 +3,8 @@
 loadData();
 // call event on click in any row in the table
 $(document).on("click", "tbody>tr", function () {
-    console.log($(this).attr('id'))
+
+    getDataToVerticalPage($(this).attr('id'));
     animationFormOn();
 });
 
@@ -40,5 +41,21 @@ function loadData() {
 
         });
 
+    });
+}
+
+function getDataToVerticalPage(id) {
+    $.ajax({
+        type: 'POST',
+        url: 'libros_datos_vertical.php',
+        data: { id: id },
+        dataType: 'json',
+        success: function (response) {
+            console.log(response.data[0].titulo);
+            // $.each(response.d, function (key, value) {
+            //     //For example
+            //     console.log(key)
+            // })
+        }
     });
 }
