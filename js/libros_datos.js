@@ -51,11 +51,20 @@ function getDataToVerticalPage(id) {
         data: { id: id },
         dataType: 'json',
         success: function (response) {
-            console.log(response.data[0].titulo);
-            // $.each(response.d, function (key, value) {
-            //     //For example
-            //     console.log(key)
-            // })
+            console.log(response);
+            $("#titulo").val(response.data[0].titulo);
+            $("#autor").val(response.data[0].autor);
+            $("#lenguaje").val(response.data[0].idioma);
+            $("#descripcion").val(response.data[0].descripcion);
+            $("#numero_paginas").val(response.data[0].numero_paginas);
+            $("#anio_edicion").val(response.data[0].anio_edicion);
+            $("#cantidad_libros").val(response.data[0].cantidad_libros);
+            $("#precio").val(response.data[0].precio);
+            response.data[0].disponible_para === "Préstamo" ? $("#disponibilidad1").prop('checked', true) : $("#disponibilidad2").prop('checked', true);
+            response.data[0].estatus_libro === "Activo" ? $("#estatus1").prop('checked', true) : $("#estatus2").prop('checked', true)
+
+
+
         }
     });
 }
