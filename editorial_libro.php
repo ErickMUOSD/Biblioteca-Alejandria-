@@ -1,6 +1,6 @@
 <?php
 require_once './conexion.php';
-    $sql = 'select *from libros ';
+    $sql = 'select id_editorial,nombre_editorial from editoriales ';
     $sentencia = $conexion->prepare($sql);
     $sentencia->execute();
     echo json_encode([

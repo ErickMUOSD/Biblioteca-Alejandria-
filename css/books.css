@@ -7,7 +7,9 @@ body, html {
 h1 {
     margin-left: 30px 0;
 }
-
+select{
+    display: block;
+}
 .nav-group {
     background-color: #054082;
     height: 80px;
@@ -117,4 +119,7 @@ img {
     -moz-border-radius: 7%;
     -ms-border-radius: 7%;
     -o-border-radius: 7%;
+}
+.hidden-id{
+    display: none;
 }

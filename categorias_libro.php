@@ -1,6 +1,6 @@
 <?php
 require_once './conexion.php';
-    $sql = 'select *from libros ';
+    $sql = 'select id_categoria,nombre_categoria from categorias ';
     $sentencia = $conexion->prepare($sql);
     $sentencia->execute();
     echo json_encode([
