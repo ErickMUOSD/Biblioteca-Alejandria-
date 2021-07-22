@@ -1,0 +1,131 @@
+<div id="overlay-page" onclick="animationFormOff()">
+
+</div>
+<div id="vertical-page" class="vertical-page-hide">
+
+    <div class="vertical-header">
+        <h2 class="pt-3">Detalles</h3>
+            <!-- <i class="bi bi-arrow-bar-left"></i> -->
+    </div>
+    <div class="p-3 vertical-page-body">
+        <form id="form" action="">
+            <div class="mb-3">
+                <div class="row align-items-start mt-2 ">
+                    <div class="col">
+
+                        <label for="categoria_libro" class="form-label">Categorias</label>
+                        <select name="categoria_libro" id="categoria_libro" class="form-select"
+                            aria-label=".form-select-sm example">
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="editorial_libro" class="form-label">Editoriales</label>
+                        <select name="editorial_libro" id="editorial_libro" class="form-select"
+                            aria-label=".form-select-sm example">
+                            
+
+                        </select>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="mb-2">
+                <label for="titulo" class="form-label">Titulo</label>
+                <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del libro">
+            </div>
+            <div class="mb-2">
+                <label for="autor" class="form-label">Autor</label>
+                <input type="text" name="autor" class="form-control" id="autor" placeholder="Autor del libro">
+            </div>
+            <div class="mb-2">
+                <label for="idioma" class="form-label">Idioma</label>
+                <input type="text" class="form-control" name="idioma" id="idioma" placeholder="Lenguaje del libro">
+            </div>
+
+            <div class="mb-2">
+                <label for=dDescripcion" class="form-label">Descripcion</label>
+                <textarea name="descripcion" class="form-control" placeholder="Redacta una pequeña descripcion aquí"
+                    id="descripcion"></textarea>
+            </div>
+
+            <div class="row align-items-start">
+                <div class="col">
+                    <label for="numero_paginas" class="form-label mr-4 ">N. páginas</label>
+                    <input name="numero_paginas" id="numero_paginas" type="text" class="form-control"
+                        placeholder="número de paginas" aria-label="Username">
+                </div>
+                <div class="col">
+                    <label for="anio_edicion" class="form-label mr-4 ">Año edi.</label>
+                    <input name="anio_edicion" id="anio_edicion" type="text" class="form-control"
+                        placeholder="Año de edicion" aria-label="Username">
+                </div>
+
+            </div>
+            <div class="row align-items-start mt-2">
+                <div class="col">
+                    <label for="cantidad_libros" class="form-label mr-4 ">Cantidad libros.</label>
+                    <input name="cantidad_libros" id="cantidad_libros" type="text" class="form-control"
+                        placeholder="Cantidad libros" aria-label="Username">
+                </div>
+                <div class="col">
+                    <label for="precio" class="form-label mr-4 ">Precio</label>
+                    <input name="precio" id="precio" type="text" class="form-control" placeholder="Precio "
+                        aria-label="Username">
+                </div>
+            </div>
+
+            <div class="row align-items-start mt-2">
+                <div class="col">
+                    <label for="disponibilidad" class="form-label mr-4 ">Disponible para</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponibilidad1"
+                            value="Préstamo">
+                        <label class="form-check-label" for="disponibilidad1 ">
+                            Préstamo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponibilidad2"
+                            value="Intercambio">
+                        <label class="form-check-label" for="disponibilidad2">
+                            Intercambio
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <label for="estatus" class="form-label mr-4 ">Estatus </label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo">
+                        <label class="form-check-label" for="estatus1">
+                            Activo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="estatus" id="estatus2" value="Inactivo">
+                        <label class="form-check-label" for="estatus2">
+                            Inactivo
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mt-3 ">
+                <label for="foto" class="form-label">Foto</label>
+                <input class="form-control" type="file" id="foto" name="foto">
+            </div>
+
+            <div class="row align-items-start mt-4 " style="text-align: center;">
+                <div class="col">
+                    <button type="button" onclick="updateBook()" class="btn btn-primary">Update</button>
+                </div>
+                <div class="col">
+                    <button type="button" onclick="animationFormOff()" class="btn btn-cancel">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,6 +1,6 @@
-
-body, html{
+body, html {
     height: 100%;
+    background-color: #efeff0;
 }
 
 .search-bar-header {
@@ -9,7 +9,7 @@ body, html{
     flex-direction: column;
     align-items: center;
     background-color: #054082;
-    height: 230px;
+    height: 220px;
 }
 
 h1 {
@@ -26,7 +26,7 @@ h5 {
 }
 
 .input-search {
-    border: 0 solid #e2e8f0;;
+    border: 0 solid #e2e8f0;
     width: 800px;
     height: 64px;
     border-radius: 5px;
@@ -37,11 +37,20 @@ h5 {
     padding-left: 20px;
     font-size: larger;
 }
-input:focus{
+
+input:focus {
     outline: none;
 }
+
 .nav-group {
     background-color: #054082;
     height: 80px;
     border-bottom: 1px solid rgba(70, 140, 207, 0.5);
+}
+
+.card-alignment {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
