@@ -74,8 +74,18 @@ function addBook() {
     //we add book
     //fill input and post the data
     //we will use a new php file  s
+    animationFormOff();
+
 
 }
+function clearInputForm() {
+    $('#form').find('input:text, textarea')
+        .each(function () {
+            $(this).val('');
+        });
+
+}
+
 function updateBook() {
     $.ajax({
         type: 'POST',
@@ -96,7 +106,8 @@ function updateBook() {
         },
         cache: false,
         success: function (response) {
-            console.log(response)
+            clearInputForm()
+            animationFormOff();
         }
     });
 
