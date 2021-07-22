@@ -12,15 +12,15 @@
 
             <div class="mb-2">
                 <label for="titulo" class="form-label">Titulo</label>
-                <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del libro" >
+                <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del libro">
             </div>
             <div class="mb-2">
                 <label for="autor" class="form-label">Autor</label>
                 <input type="text" name="autor" class="form-control" id="autor" placeholder="Autor del libro">
             </div>
             <div class="mb-2">
-                <label for="lenguaje" class="form-label">Idioma</label>
-                <input type="text" class="form-control" name="lenguaje" id="lenguaje" placeholder="Lenguaje del libro">
+                <label for="idioma" class="form-label">Idioma</label>
+                <input type="text" class="form-control" name="idioma" id="idioma" placeholder="Lenguaje del libro">
             </div>
 
             <div class="mb-2">
@@ -59,14 +59,14 @@
                 <div class="col">
                     <label for="disponibilidad" class="form-label mr-4 ">Disponible para</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="disponible" id="disponibilidad1" >
-                        <label class="form-check-label" for="disponibilidad1">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponibilidad1" value="Préstamo">
+                        <label class="form-check-label" for="disponibilidad1 "  >
                             Préstamo
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="disponible" id="disponibilidad2" >
-                        <label class="form-check-label" for="disponibilidad2">
+                        <input class="form-check-input" type="radio" name="disponible" id="disponibilidad2" value="Intercambio">
+                        <label class="form-check-label" for="disponibilidad2"  >
                             Intercambio
                         </label>
                     </div>
@@ -75,15 +75,15 @@
                 <div class="col">
                     <label for="estatus" class="form-label mr-4 ">Estatus </label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="estatus" id="estatus1">
+                        <input class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo">
                         <label class="form-check-label" for="estatus1">
                             Activo
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="estatus" id="estatus2" >
+                        <input class="form-check-input" type="radio" name="estatus" id="estatus2"  value="Inactivo">
                         <label class="form-check-label" for="estatus2">
-                            Desactivo
+                            Inactivo
                         </label>
                     </div>
                 </div>
@@ -96,10 +96,10 @@
 
             <div class="row align-items-start mt-4 " style="text-align: center;">
                 <div class="col">
-                    <button type="button" class="btn btn-primary ">Update</button>
+                    <button type="button" onclick="updateBook()" class="btn btn-primary">Update</button>
                 </div>
                 <div class="col">
-                    <button type="button" class="btn ">Cancel</button>
+                    <button type="button" class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"> </script>
-   
+
 
     <title>Libros</title>
 
@@ -29,11 +29,11 @@
             <div class="card-body">
                 <div class="section-upload-btn">
                     <h1>Libros</h1>
-                    
+
                     <?php
                     require_once('./framgents-html/vertical-form.html');
                     ?>
-                    <button class="btn" onclick="animationFormOn()"><i class="bi bi-plus-square mr-2 "></i>
+                    <button class="btn" onclick="   animationFormOn()"><i class="bi bi-plus-square mr-2 "></i>
                         Añadir</button>
 
                 </div>

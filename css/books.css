@@ -23,11 +23,11 @@ h1 {
     background-color: #054082;
     color: white;
     margin-right: 30px;
-    border-radius: 7%;
-    -webkit-border-radius: 7%;
-    -moz-border-radius: 7%;
-    -ms-border-radius: 7%;
-    -o-border-radius: 7%;
+    border-radius: 13%;
+    -webkit-border-radius: 13%;
+    -moz-border-radius: 13%;
+    -ms-border-radius: 13%;
+    -o-border-radius: 13%;
 }
 
 img {
@@ -53,7 +53,7 @@ img {
 .overlay-page-style {
     height: 100vh;
     width: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
@@ -105,4 +105,16 @@ img {
 .vertical-page-body::-webkit-scrollbar-thumb {
     /* background: #FEC529; */
     background-color: #054082;
+}
+
+.btn-cancel {
+    color: #054082;
+    border-color: #04254b;
+    background-color: white;
+    margin-right: 30px;
+    border-radius: 7%;
+    -webkit-border-radius: 7%;
+    -moz-border-radius: 7%;
+    -ms-border-radius: 7%;
+    -o-border-radius: 7%;
 }
