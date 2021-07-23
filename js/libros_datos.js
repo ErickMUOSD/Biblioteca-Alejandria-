@@ -1,17 +1,16 @@
-let idBookGlobal, idCategoryGlobal, idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
+let  idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
 //call function to fill table
 loadData();
 // call event on click in any row in the table
 $(document).on("click", "tbody>tr", function () {
-
+   let currentIdCategory, currentIdEditorial;
     idBookGlobal = $(this).attr('id')
-    idCategoryGlobal = parseInt($(this).find("td:eq( 11 )").text(), 10);
-    idEditorialGlobal = parseInt($(this).find("td:eq( 10 )").text(), 10)
-
+    currentIdCategory = parseInt($(this).find("td:eq( 11 )").text(), 10);
+    currentIdEditorial = parseInt($(this).find("td:eq( 10 )").text(), 10)
     chooseFilePost = 1
-    console.log(idBookGlobal)
-    console.log("id categoria tr" + idCategoryGlobal)
-    console.log("id categoria tr" + idEditorialGlobal)
+    
+    
+    getCategoryandEditorial(currentIdCategory,currentIdEditorial)
     getDataToVerticalPage(idBookGlobal);
     animationFormOn();
 });
@@ -39,8 +38,8 @@ function animationFormOff() {
     document.getElementById("vertical-page").classList.remove("vertical-page-style")
     document.getElementById("overlay-page").style.display = "none";
     document.getElementById("tbody").classList.remove("disable-hover");
-    idCategoryGlobal = ''
-    idEditorialGlobal = ''
+    // idCategoryGlobal = ''
+    // idEditorialGlobal = ''
 
 }
 function loadData() {
@@ -58,7 +57,7 @@ function loadData() {
                 "</td> <td class='align-middle'>" + values['disponible_para'] +
                 "</td>  <td class='align-middle' >" + values['precio'] +
                 "</td>  <td class='align-middle' >" + values['cantidad_libros'] +
-                "</td> <td class='hidden-id' id='id_editorial'>" + values['id_editorial'] + " </td> " +
+                "</td> <td class='hidden-id' name='hidden-editorial' id='id_editorial'>" + values['id_editorial'] + " </td> " +
                 "</td> <td class='hidden-id' id='id_categoria'>" + values['id_categoria'] + " </td> " +
                 "</tr> ");
 
@@ -69,7 +68,7 @@ function loadData() {
 }
 
 function getDataToVerticalPage(id) {
-    getCategoryandEditorial()
+
     $.ajax({
         type: 'GET',
         url: 'libros_datos_vertical.php',
@@ -95,10 +94,13 @@ function getDataToVerticalPage(id) {
 
 }
 function addBook() {
+
     chooseFilePost = 2
     animationFormOn();
     getCategoryandEditorial()
-
+    // $(this).find("td:eq( 11 )").text()
+    console.log("primer id" + $("tbody tr:first-child").val())
+  
 
 }
 function clearInputForm() {
@@ -111,9 +113,8 @@ function clearInputForm() {
 }
 
 function updateBook() {
-    //error no se toma el valor a menos que cambié de las categorias y editoriales, dejarlo por defecto no toma el valior
-    console.log("id categoria" + $("#categoria_libro option:selected").val())
-    console.log("id editorial" + $("#editorial_libro option:selected").val())
+
+
     $.ajax({
         type: 'POST',
         url: chooseFilePost == 1 ? 'libros_actualizar.php' : 'libros_insertar.php',
@@ -143,18 +144,18 @@ function updateBook() {
     });
 
 }
-function getCategoryandEditorial() {
+function getCategoryandEditorial(currentIdCategory, currentIdEditorial) {
     let selected = '';
     $.getJSON("categorias_libro.php", { cache: false }, function (data) {
         data.data.forEach(function (values) {
-            selected = (idCategoryGlobal === values['id_categoria'] ? "selected" : " ")
+            selected = (currentIdCategory === values['id_categoria'] ? "selected" : " ")
             $("#categoria_libro").append("<option value='" + values['id_categoria'] + "' " + selected + ">" + values['nombre_categoria'] + "</option>")
         });
     });
 
     $.getJSON("editorial_libro.php", { cache: false }, function (data) {
         data.data.forEach(function (values) {
-            selected = (idEditorialGlobal === values['id_editorial'] ? "selected" : " ")
+            selected = (currentIdEditorial === values['id_editorial'] ? "selected" : " ")
             $("#editorial_libro").append("<option value='" + values['id_editorial'] + "' " + selected + ">" + values['nombre_editorial'] + "</option>")
         });
     });
