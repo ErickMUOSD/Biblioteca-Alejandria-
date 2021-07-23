@@ -11,7 +11,9 @@ anio_edicion = :anio_edicion ,
 disponible_para = :disponible_para ,
 precio = :precio ,
 cantidad_libros = :cantidad_libros,
-estatus_libro = :estatus_libro    
+estatus_libro = :estatus_libro,
+id_categoria = :id_categoria,
+id_editorial = :id_editorial    
 where id_libro = :id ';
 $sentencia = $conexion->prepare($sql);
 $sentencia->bindValue(':titulo', $_POST['titulo'], PDO::PARAM_STR);
@@ -25,5 +27,7 @@ $sentencia->bindValue(':precio', $_POST['precio'], PDO::PARAM_STR);
 $sentencia->bindValue(':disponible_para', $_POST['disponible_para'], PDO::PARAM_STR);
 $sentencia->bindValue(':cantidad_libros', $_POST['cantidad_libros'], PDO::PARAM_STR);
 $sentencia->bindValue(':estatus_libro', $_POST['estatus_libro'], PDO::PARAM_STR);
+$sentencia->bindValue(':id_categoria', $_POST['id_categoria'], PDO::PARAM_STR);
+$sentencia->bindValue(':id_editorial', $_POST['id_editorial'], PDO::PARAM_STR);
 $sentencia->bindValue(':id', $_POST['id'], PDO::PARAM_INT);
 $sentencia->execute();

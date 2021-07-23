@@ -33,8 +33,8 @@
                     <?php
                     require_once('./framgents-html/vertical-form.html');
                     ?>
-                    <button class="btn" onclick="animationFormOn()"><i class="bi bi-plus-square mr-2 "></i>
-                        Añadir</button>
+                    <button class="btn" onclick="addBook()"><i class="bi bi-plus-square mr-2 "></i>
+                        Agregar</button>
 
                 </div>
 

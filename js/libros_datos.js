@@ -1,21 +1,29 @@
-let idBook;
-let idCategory;
-let idBookEditorial;
+let idBookGlobal, idCategoryGlobal, idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
 //call function to fill table
 loadData();
 // call event on click in any row in the table
 $(document).on("click", "tbody>tr", function () {
 
-    idBook = $(this).attr('id')
-    idCategory = parseInt($(this).find("td:eq( 10 )").text(), 10)
-    idBookEditorial = parseInt($(this).find("td:eq( 11 )").text(), 10);
+    idBookGlobal = $(this).attr('id')
+    idCategoryGlobal = parseInt($(this).find("td:eq( 11 )").text(), 10);
+    idEditorialGlobal = parseInt($(this).find("td:eq( 10 )").text(), 10)
 
-    getDataToVerticalPage(idBook);
+    chooseFilePost = 1
+    console.log(idBookGlobal)
+    console.log("id categoria tr" + idCategoryGlobal)
+    console.log("id categoria tr" + idEditorialGlobal)
+    getDataToVerticalPage(idBookGlobal);
     animationFormOn();
 });
-$('#categoria_libro').change(function () {
-    console.log($(this).val())
-});
+// $('#categoria_libro').change(function () {
+//     idCategoryPost = $(this).val()
+// });
+// $('#editorial_libro').change(function () {
+
+//     idEditorialPost = $(this).val()
+// });
+
+
 function animationFormOn() {
     document.getElementById("overlay-page").style.display = "block";
     document.getElementById("overlay-page").className = "overlay-page-style";
@@ -31,10 +39,14 @@ function animationFormOff() {
     document.getElementById("vertical-page").classList.remove("vertical-page-style")
     document.getElementById("overlay-page").style.display = "none";
     document.getElementById("tbody").classList.remove("disable-hover");
+    idCategoryGlobal = ''
+    idEditorialGlobal = ''
 
 }
 function loadData() {
+
     $.getJSON("libros_datos.php", { cache: false }, function (data, textStatus, jqXHR) {
+
         data.data.forEach(function (values) {
             $("#tbody").append("<tr id=" + values['id_libro'] +
                 " class='tr-style'> <td><img src='images/libro.jpg' '></td>  <td class='align-middle' >" + values['titulo'] +
@@ -57,20 +69,7 @@ function loadData() {
 }
 
 function getDataToVerticalPage(id) {
-    let selected = '';
-    $.getJSON("categorias_libro.php", { cache: false }, function (data) {
-        data.data.forEach(function (values) {
-            selected = (idCategory === values['id_categoria'] ? "selected" : "")
-            $("#categoria_libro").append("<option value='" + values['id_categoria'] + "' " + selected + ">" + values['nombre_categoria'] + "</option>")
-        });
-    });
-
-    $.getJSON("editorial_libro.php", { cache: false }, function (data) {
-        data.data.forEach(function (values) {
-            selected = (idCategory === values['id_editorial'] ? "selected" : "")
-            $("#editorial_libro").append("<option value='" + values['id_editorial'] + "' " + selected + ">" + values['nombre_editorial'] + "</option>")
-        });
-    });
+    getCategoryandEditorial()
     $.ajax({
         type: 'GET',
         url: 'libros_datos_vertical.php',
@@ -96,10 +95,9 @@ function getDataToVerticalPage(id) {
 
 }
 function addBook() {
-    //we add book
-    //fill input and post the data
-    //we will use a new php file  s
-    animationFormOff();
+    chooseFilePost = 2
+    animationFormOn();
+    getCategoryandEditorial()
 
 
 }
@@ -113,11 +111,16 @@ function clearInputForm() {
 }
 
 function updateBook() {
+    //error no se toma el valor a menos que cambié de las categorias y editoriales, dejarlo por defecto no toma el valior
+    console.log("id categoria" + $("#categoria_libro option:selected").val())
+    console.log("id editorial" + $("#editorial_libro option:selected").val())
     $.ajax({
         type: 'POST',
-        url: 'libros_actualizar.php',
+        url: chooseFilePost == 1 ? 'libros_actualizar.php' : 'libros_insertar.php',
         data: {
-            id: idBook,
+            id: idBookGlobal,
+            id_categoria: $("#categoria_libro option:selected").val(),
+            id_editorial: $("#editorial_libro option:selected").val(),
             titulo: $("#titulo").val(),
             autor: $("#autor").val(),
             idioma: $("#idioma").val(),
@@ -128,13 +131,31 @@ function updateBook() {
             precio: $("#precio").val(),
             cantidad_libros: $("#cantidad_libros").val(),
             disponible_para: $("input[name='disponible']:checked").val(),
-            estatus_libro: $("input[name='estatus']:checked").val()
+            estatus_libro: $("input[name='estatus']:checked").val(),
+
         },
         cache: false,
         success: function (response) {
+            console.log(response)
             clearInputForm()
             animationFormOff();
         }
     });
 
+}
+function getCategoryandEditorial() {
+    let selected = '';
+    $.getJSON("categorias_libro.php", { cache: false }, function (data) {
+        data.data.forEach(function (values) {
+            selected = (idCategoryGlobal === values['id_categoria'] ? "selected" : " ")
+            $("#categoria_libro").append("<option value='" + values['id_categoria'] + "' " + selected + ">" + values['nombre_categoria'] + "</option>")
+        });
+    });
+
+    $.getJSON("editorial_libro.php", { cache: false }, function (data) {
+        data.data.forEach(function (values) {
+            selected = (idEditorialGlobal === values['id_editorial'] ? "selected" : " ")
+            $("#editorial_libro").append("<option value='" + values['id_editorial'] + "' " + selected + ">" + values['nombre_editorial'] + "</option>")
+        });
+    });
 }
