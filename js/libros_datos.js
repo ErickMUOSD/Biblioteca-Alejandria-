@@ -1,16 +1,16 @@
-let  idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
+let idBookGlobal,idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
 //call function to fill table
 loadData();
 // call event on click in any row in the table
 $(document).on("click", "tbody>tr", function () {
-   let currentIdCategory, currentIdEditorial;
+    let currentIdCategory, currentIdEditorial;
     idBookGlobal = $(this).attr('id')
     currentIdCategory = parseInt($(this).find("td:eq( 11 )").text(), 10);
     currentIdEditorial = parseInt($(this).find("td:eq( 10 )").text(), 10)
     chooseFilePost = 1
-    
-    
-    getCategoryandEditorial(currentIdCategory,currentIdEditorial)
+
+
+    getCategoryandEditorial(currentIdCategory, currentIdEditorial)
     getDataToVerticalPage(idBookGlobal);
     animationFormOn();
 });
@@ -99,8 +99,13 @@ function addBook() {
     animationFormOn();
     getCategoryandEditorial()
     // $(this).find("td:eq( 11 )").text()
-    console.log("primer id" + $("tbody tr:first-child").val())
-  
+
+    $("#categoria_libro").val($("#categoria_libro option:first").val());
+
+ 
+    console.log("primer ids " + $("#categoria_libro option:selected").val() )
+
+    //pass to insercion the first id from tr
 
 }
 function clearInputForm() {
