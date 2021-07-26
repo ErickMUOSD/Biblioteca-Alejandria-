@@ -1,5 +1,12 @@
 <?php
 print_r($_REQUEST);
+$filename = $_FILES['foto']['name'];
+
+print($filename);
+
+
+
+//before doing this validate 
 require_once './conexion.php';
 $sql = 'update libros set
 titulo = :titulo ,
@@ -24,10 +31,10 @@ $sentencia->bindValue(':numero_paginas', $_POST['numero_paginas'], PDO::PARAM_IN
 $sentencia->bindValue(':anio_edicion', $_POST['anio_edicion'], PDO::PARAM_INT);
 $sentencia->bindValue(':cantidad_libros', $_POST['cantidad_libros'], PDO::PARAM_INT);
 $sentencia->bindValue(':precio', $_POST['precio'], PDO::PARAM_STR);
-$sentencia->bindValue(':disponible_para', $_POST['disponible_para'], PDO::PARAM_STR);
+$sentencia->bindValue(':disponible_para', $_POST['disponible'], PDO::PARAM_STR);
 $sentencia->bindValue(':cantidad_libros', $_POST['cantidad_libros'], PDO::PARAM_STR);
-$sentencia->bindValue(':estatus_libro', $_POST['estatus_libro'], PDO::PARAM_STR);
-$sentencia->bindValue(':id_categoria', $_POST['id_categoria'], PDO::PARAM_STR);
-$sentencia->bindValue(':id_editorial', $_POST['id_editorial'], PDO::PARAM_STR);
+$sentencia->bindValue(':estatus_libro', $_POST['estatus'], PDO::PARAM_STR);
+$sentencia->bindValue(':id_categoria', $_POST['categoria_libro'], PDO::PARAM_STR);
+$sentencia->bindValue(':id_editorial', $_POST['editorial_libro'], PDO::PARAM_STR);
 $sentencia->bindValue(':id', $_POST['id'], PDO::PARAM_INT);
 $sentencia->execute();

@@ -1,4 +1,4 @@
-let idBookGlobal,idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
+let idBookGlobal, idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
 //call function to fill table
 loadData();
 // call event on click in any row in the table
@@ -76,7 +76,6 @@ function getDataToVerticalPage(id) {
         dataType: 'json',
         cache: false,
         success: function (response) {
-
             $("#titulo").val(response.data[0].titulo);
             $("#autor").val(response.data[0].autor);
             $("#idioma").val(response.data[0].idioma);
@@ -99,11 +98,7 @@ function addBook() {
     animationFormOn();
     getCategoryandEditorial()
     // $(this).find("td:eq( 11 )").text()
-
     $("#categoria_libro").val($("#categoria_libro option:first").val());
-
- 
-    console.log("primer ids " + $("#categoria_libro option:selected").val() )
 
     //pass to insercion the first id from tr
 
@@ -120,31 +115,27 @@ function clearInputForm() {
 function updateBook() {
 
 
+    var form = $('#form')[0];
+    var formData = new FormData(form);
+    formData.append('id',idBookGlobal);
+    console.log(formData)
+   
     $.ajax({
         type: 'POST',
-        url: chooseFilePost == 1 ? 'libros_actualizar.php' : 'libros_insertar.php',
-        data: {
-            id: idBookGlobal,
-            id_categoria: $("#categoria_libro option:selected").val(),
-            id_editorial: $("#editorial_libro option:selected").val(),
-            titulo: $("#titulo").val(),
-            autor: $("#autor").val(),
-            idioma: $("#idioma").val(),
-            descripcion: $("#descripcion").val(),
-            numero_paginas: $("#numero_paginas").val(),
-            anio_edicion: $("#anio_edicion").val(),
-            cantidad_libros: $("#cantidad_libros").val(),
-            precio: $("#precio").val(),
-            cantidad_libros: $("#cantidad_libros").val(),
-            disponible_para: $("input[name='disponible']:checked").val(),
-            estatus_libro: $("input[name='estatus']:checked").val(),
+        cache: false,
+        processData: false,  // Important!
+        contentType: false,
+        url: 'libros_actualizar.php',
+        data: formData,
+        success: function (response) {
+
+            console.log("SUCCESS : " + response);
 
         },
-        cache: false,
-        success: function (response) {
-            console.log(response)
-            clearInputForm()
-            animationFormOff();
+        error: function (response) {
+
+            console.log("ERROR : " + response);
+
         }
     });
 
@@ -164,4 +155,20 @@ function getCategoryandEditorial(currentIdCategory, currentIdEditorial) {
             $("#editorial_libro").append("<option value='" + values['id_editorial'] + "' " + selected + ">" + values['nombre_editorial'] + "</option>")
         });
     });
+}
+
+function previewFile() {
+    var preview = document.querySelector('img');
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+        preview.src = reader.result;
+    }
+
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        preview.src = "";
+    }
 }

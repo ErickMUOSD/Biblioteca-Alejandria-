@@ -8,7 +8,12 @@
             <!-- <i class="bi bi-arrow-bar-left"></i> -->
     </div>
     <div class="p-3 vertical-page-body">
-        <form id="form" action="">
+        <form id="form">
+            <div class="mt-3 ">
+                <label for="foto" class="form-label">Foto</label>
+                <img id="preview-foto" src="" alt="previe-foto" style="display: block; width: 150px; height: 100px;">
+                <input class="form-control" type="file" id="foto" name="foto" onchange="previewFile()">
+            </div>
             <div class="mb-3">
                 <div class="row align-items-start mt-2 ">
                     <div class="col">
@@ -98,13 +103,13 @@
                 <div class="col">
                     <label for="estatus" class="form-label mr-4 ">Estatus </label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo">
+                        <input required class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo">
                         <label class="form-check-label" for="estatus1">
                             Activo
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="estatus" id="estatus2" value="Inactivo">
+                        <input required class="form-check-input" type="radio" name="estatus" id="estatus2" value="Inactivo">
                         <label class="form-check-label" for="estatus2">
                             Inactivo
                         </label>
@@ -112,20 +117,18 @@
                 </div>
 
             </div>
-            <div class="mt-3 ">
-                <label for="foto" class="form-label">Foto</label>
-                <input class="form-control" type="file" id="foto" name="foto">
-            </div>
+           
 
             <div class="row align-items-start mt-4 " style="text-align: center;">
                 <div class="col">
                     <button type="button" onclick="updateBook()" class="btn btn-primary">Update</button>
+                     
                 </div>
                 <div class="col">
                     <button type="button" onclick="animationFormOff()" class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
-
+           
         </form>
     </div>
 </div>
