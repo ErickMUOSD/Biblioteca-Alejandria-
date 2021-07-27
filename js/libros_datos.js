@@ -44,12 +44,12 @@ function animationFormOff() {
 }
 function loadData() {
 
-    $.getJSON("libros_datos.php", { cache: false }, function (data, textStatus, jqXHR) {
+    $.getJSON("libros_datos.php", { cache: false }, function (data) {
 
         data.data.forEach(function (values) {
             $("#tbody").append("<tr id=" + values['id_libro'] +
-                " class='tr-style'> <td><img src='images/libro.jpg' '></td>  <td class='align-middle' >" + values['titulo'] +
-                "</td> <td class='align-middle' >" + values['titulo'] +
+                " class='tr-style'> <td><img src='images/"+values['foto']+"' ></td>  <td class='align-middle' >" + values['titulo'] +
+                "</td> <td class='align-middle' >" + values['autor'] +
                 "</td> <td class='align-middle' >" + values['idioma'] +
                 "</td> <td class='align-middle'>" + values['descripcion'] +
                 "</td> <td class='align-middle' >" + values['numero_paginas'] +
@@ -104,7 +104,7 @@ function addBook() {
 
 }
 function clearInputForm() {
-    $('#form').find('input:text, textarea')
+    $('#form').find('input:text, textarea, input:file')
         .each(function () {
             $(this).val('');
         });
@@ -114,28 +114,22 @@ function clearInputForm() {
 
 function updateBook() {
 
-
     var form = $('#form')[0];
     var formData = new FormData(form);
     formData.append('id',idBookGlobal);
-    console.log(formData)
-   
     $.ajax({
         type: 'POST',
         cache: false,
         processData: false,  // Important!
         contentType: false,
-        url: 'libros_actualizar.php',
+        url: chooseFilePost == 1 ?'libros_actualizar.php': 'libros_insertar.php',
         data: formData,
         success: function (response) {
-
             console.log("SUCCESS : " + response);
-
+            animationFormOff()
         },
         error: function (response) {
-
             console.log("ERROR : " + response);
-
         }
     });
 

@@ -1,13 +1,13 @@
 <?php
-print_r($_REQUEST);
-$filename = $_FILES['foto']['name'];
-
-print($filename);
-
-
-
-//before doing this validate 
 require_once './conexion.php';
+print_r($_FILES);
+$filename = $_FILES['foto']['name'];
+$nombre_archivo = uniqid('lib-', true) . '.jpg';
+$image_Path = "./images/".$nombre_archivo;
+
+move_uploaded_file($_FILES['foto']['tmp_name'], $image_Path);
+
+
 $sql = 'update libros set
 titulo = :titulo ,
 autor = :autor ,
@@ -15,6 +15,7 @@ idioma = :idioma ,
 descripcion = :descripcion ,
 numero_paginas = :numero_paginas ,
 anio_edicion = :anio_edicion ,
+foto = :foto_nombre,
 disponible_para = :disponible_para ,
 precio = :precio ,
 cantidad_libros = :cantidad_libros,
@@ -29,6 +30,7 @@ $sentencia->bindValue(':idioma', $_POST['idioma'], PDO::PARAM_STR);
 $sentencia->bindValue(':descripcion', $_POST['descripcion'], PDO::PARAM_STR);
 $sentencia->bindValue(':numero_paginas', $_POST['numero_paginas'], PDO::PARAM_INT);
 $sentencia->bindValue(':anio_edicion', $_POST['anio_edicion'], PDO::PARAM_INT);
+$sentencia->bindValue(':foto_nombre', $nombre_archivo, PDO::PARAM_STR);
 $sentencia->bindValue(':cantidad_libros', $_POST['cantidad_libros'], PDO::PARAM_INT);
 $sentencia->bindValue(':precio', $_POST['precio'], PDO::PARAM_STR);
 $sentencia->bindValue(':disponible_para', $_POST['disponible'], PDO::PARAM_STR);
