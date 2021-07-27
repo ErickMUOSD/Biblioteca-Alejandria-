@@ -48,7 +48,8 @@ function loadData() {
 
         data.data.forEach(function (values) {
             $("#tbody").append("<tr id=" + values['id_libro'] +
-                " class='tr-style'> <td><img src='images/"+values['foto']+"' ></td>  <td class='align-middle' >" + values['titulo'] +
+                " class='tr-style'> <td><img src='images/"+values['foto']+
+                "' ></td>  <td class='align-middle' >" + values['titulo'] +
                 "</td> <td class='align-middle' >" + values['autor'] +
                 "</td> <td class='align-middle' >" + values['idioma'] +
                 "</td> <td class='align-middle'>" + values['descripcion'] +
@@ -76,6 +77,7 @@ function getDataToVerticalPage(id) {
         dataType: 'json',
         cache: false,
         success: function (response) {
+            $("#preview-foto").attr("src", "images/"+response.data[0].foto);
             $("#titulo").val(response.data[0].titulo);
             $("#autor").val(response.data[0].autor);
             $("#idioma").val(response.data[0].idioma);
