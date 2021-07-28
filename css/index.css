@@ -1,6 +1,20 @@
 body, html {
     height: 100%;
+    width: 100%;
     background-color: #efeff0;
+}
+.collapse{
+    width: 200px;
+    
+}
+.card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: none;
 }
 
 .search-bar-header {
@@ -9,43 +23,24 @@ body, html {
     flex-direction: column;
     align-items: center;
     background-color: #054082;
-    height: 220px;
 }
 
-h1 {
-    margin: 20px 0;
+label {
+    color: azure;
+}
+
+.search-bar-header h1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
     text-align: center;
     color: white;
 }
 
-h5 {
-    margin-top: 10px;
-    margin-bottom: 15px;
+.search-bar-header h5 {
+    margin-bottom: 30px;
     text-align: center;
     color: white;
-}
-
-.input-search {
-    border: 0 solid #e2e8f0;
-    width: 800px;
-    height: 64px;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-    padding-left: 20px;
-    font-size: larger;
-}
-
-input:focus {
-    outline: none;
-}
-
-.nav-group {
-    background-color: #054082;
-    height: 80px;
-    border-bottom: 1px solid rgba(70, 140, 207, 0.5);
 }
 
 .card-alignment {
@@ -53,4 +48,59 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+a {
+    color: white
+}
+
+a:visited {
+    color: white
+}
+
+.search {
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+}
+
+.search input {
+    width: 800px;
+    height: 64px;
+    text-indent: 25px;
+    /*border: 2px solid #ffffff;
+    */
+    font-size: larger;
+    border: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    box-shadow: rgba(255, 255, 255, 0.205) 0px 7px 29px 0px;
+}
+
+.search input:focus {
+    box-shadow: none;
+    border: 2px solid #054082;
+}
+
+.search .bi-search {
+    height: 100px;
+    position: absolute;
+    top: 20px;
+    left: 16px
+}
+
+.search button {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    height: 50px;
+    background: #054082;
+}
+
+.advanced-settings i {
+    color: white;
+    margin-right: 5px;
 }
