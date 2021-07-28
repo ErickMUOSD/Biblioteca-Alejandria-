@@ -34,7 +34,7 @@
                     <div class="search">
                         <i class="bi bi-search"></i>
                         <input type="text" name="buscador" id="buscador" class="form-control" placeholder="Busca por titulo" required>
-                        <button class="btn btn-primary" name="enviar">Search</button>
+                        <button class="btn btn-primary" value="enviar" name="enviar">Search</button>
                     </div>
 
                 </div>
@@ -49,8 +49,12 @@
                 <h6>Buscar por:</h6>
                 <div class="card card-body d-flex flex-row bd-highlight justify-content-center mt-2 mb-2 p-1 align-items-center">
                     <div class="mr-3 ">
-                        <input type="radio" id="titulo" name="buscar_por" value="titulo">
-                        <label for="titulo">Idioma</label>
+                        <input checked type="radio" id="titulo" name="buscar_por" value="titulo">
+                        <label for="ititulo">titulo</label>
+                    </div>
+                    <div class="mr-3 ">
+                        <input type="radio" id="idioma" name="buscar_por" value="idioma">
+                        <label for="idioma">Idioma</label>
                     </div>
                     <div class="mr-3">
                         <input type="radio" id="editorial" name="buscar_por" value="editorial">
@@ -67,17 +71,20 @@
     </div>
     <div class="container-fluid  " style="display: flex; flex-wrap: wrap; justify-content: center; ">
         <?php
-        require_once './conexion.php';
-            
-        if (isset($_POST['enviar']) && isset($_POST['buscador'])) {
-            
-            $buscador = $_POST['buscador'];
-            $sql = "SELECT * FROM libros WHERE titulo LIKE '%$buscador%' order by titulo asc";
-            $sentencia = $conexion->prepare($sql);
-            $sentencia->execute();
-            foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
 
-                echo <<<fin
+
+        if (isset($_POST['enviar']) && isset($_POST['buscador'])) {
+            require_once './conexion.php';
+            if ($_POST['buscar_por'] != 'editorial') {
+
+                $buscador = $_POST['buscador'];
+                $buscar_por =  $_POST['buscar_por'];
+                $sql = "SELECT * FROM libros WHERE $buscar_por LIKE '%$buscador%' order by titulo asc";
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->execute();
+                foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
+
+                    echo <<<fin
                 <div class="card  p-1 mr-4 mt-3 card-alignment">
             <img src="images/{$libros['foto']}" class="card-img-top" style=" width: 160px; height: 220px;">
             <div class="card-body m-1 ">
@@ -94,6 +101,9 @@
             </div>
         </div>
 fin;
+                }
+            } else {
+                echo 'Es editorial';
             }
         }
         ?>
