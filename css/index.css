@@ -3,10 +3,19 @@ body, html {
     width: 100%;
     background-color: #efeff0;
 }
-.collapse{
-    width: 200px;
+
+.collapse {
+    width: 50%;
+    margin-bottom: 10px;
+    margin: 0 auto;
     
 }
+
+.card *  {
+    color: black;
+    margin: 0;
+}
+
 .card {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 10px;
@@ -37,8 +46,12 @@ label {
     color: white;
 }
 
+.search-bar-header h6 {
+    text-align: center;
+    color: white;
+}
+
 .search-bar-header h5 {
-    margin-bottom: 30px;
     text-align: center;
     color: white;
 }
@@ -56,6 +69,10 @@ a {
 
 a:visited {
     color: white
+}
+
+a:hover {
+    color: white;
 }
 
 .search {

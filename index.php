@@ -33,7 +33,7 @@
 
                     <div class="search">
                         <i class="bi bi-search"></i>
-                        <input type="text" name="buscador" id="buscador" class="form-control" placeholder="Busca un libro">
+                        <input type="text" name="buscador" id="buscador" class="form-control" placeholder="Busca por titulo" required>
                         <button class="btn btn-primary" name="enviar">Search</button>
                     </div>
 
@@ -45,20 +45,32 @@
             </div>
 
 
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                    Some placeholder content for the collapse component. 
+            <div class="collapse w-75 " id="collapseExample" style="margin: 0 auto;">
+                <h6>Buscar por:</h6>
+                <div class="card card-body d-flex flex-row bd-highlight justify-content-center mt-2 mb-2 p-1 align-items-center">
+                    <div class="mr-3 ">
+                        <input type="radio" id="titulo" name="buscar_por" value="titulo">
+                        <label for="titulo">Idioma</label>
+                    </div>
+                    <div class="mr-3">
+                        <input type="radio" id="editorial" name="buscar_por" value="editorial">
+                        <label for="editorial">Editorial</label>
+                    </div>
+                    <div class="mr-3">
+                        <input type="radio" id="autor" name="buscar_por" value="autor">
+                        <label for="autor">Autor</label>
+                    </div>
                 </div>
             </div>
 
         </form>
     </div>
-    <div class="container-fluid  " style="display: flex; flex-wrap: wrap; ">
+    <div class="container-fluid  " style="display: flex; flex-wrap: wrap; justify-content: center; ">
         <?php
         require_once './conexion.php';
-
-        if (isset($_POST['enviar'])) {
-
+            
+        if (isset($_POST['enviar']) && isset($_POST['buscador'])) {
+            
             $buscador = $_POST['buscador'];
             $sql = "SELECT * FROM libros WHERE titulo LIKE '%$buscador%' order by titulo asc";
             $sentencia = $conexion->prepare($sql);
