@@ -25,7 +25,7 @@
 
     <div class="search-bar-header">
 
-        <h1>¡Encuentra asombrosos libros y llevatelos a casa!</h1>
+        <h1 >¡Encuentra asombrosos libros y llevatelos a casa!</h1>
         <h5>¡Llevate un libro o intercambia los que ya no uses!</h5>
         <form action="" method="POST">
             <div>
@@ -46,7 +46,7 @@
 
 
             <div class="collapse w-75 " id="collapseExample" style="margin: 0 auto;">
-                <h6>Buscar por:</h6>
+                <h5>Buscar por:</h5>
                 <div class="card card-body d-flex flex-row bd-highlight justify-content-center mt-2 mb-2 p-1 align-items-center">
                     <div class="mr-3 ">
                         <input checked type="radio" id="titulo" name="buscar_por" value="titulo">
@@ -70,10 +70,35 @@
         </form>
     </div>
     <div class="container-fluid  " style="display: flex; flex-wrap: wrap; justify-content: center; ">
+
+
         <?php
+        if (!isset($_POST['enviar'])) {
+            require_once './conexion.php';
+            $sql = "SELECT * FROM libros ";
+            $sentencia = $conexion->prepare($sql);
+            $sentencia->execute();
+            foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
 
-
-        if (isset($_POST['enviar']) && isset($_POST['buscador'])) {
+                echo <<<fin
+        <div class="card  p-1 mr-4 mt-3 card-alignment">
+    <img src="images/{$libros['foto']}" class="card-img-top" style=" width: 160px; height: 220px;">
+    <div class="card-body m-1 ">
+        <h6 class="card-title m-0">{$libros['titulo']}</h6>
+        <p class="card-text p-0 m-0">{$libros['autor']}</p>
+        <p class="mt-2 p-0" style=" color: #054082; font-weight: bold;">{$libros['disponible_para']}</p>
+        <div class="btn-group">
+            <a href="#" class="btn mr-1" style=" background-color: #054082; color: white;"> <i class="bi bi-plus"></i>
+                Llevarlo</a>
+            <a href="#" class="btn" style=" color: #054082; border-color: #04254b;"> <i class=" bi bi-cart"></i>
+                Añadir</a>
+        </div>
+    
+    </div>
+    </div>
+    fin;
+            }
+        } else if (isset($_POST['enviar'])) {
             require_once './conexion.php';
             if ($_POST['buscar_por'] != 'editorial') {
 
