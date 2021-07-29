@@ -128,7 +128,31 @@
 fin;
                 }
             } else {
-                echo 'Es editorial';
+                    $buscador = $_POST['buscador'];
+                    $buscar_por =  $_POST['buscar_por'];
+                    $sql = "SELECT * FROM libros, editoriales WHERE nombre_editorial LIKE '%$buscador%' order by titulo asc";
+                    $sentencia = $conexion->prepare($sql);
+                    $sentencia->execute();
+                    foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
+    
+                        echo <<<fin
+                    <div class="card  p-1 mr-4 mt-3 card-alignment">
+                <img src="images/{$libros['foto']}" class="card-img-top" style=" width: 160px; height: 220px;">
+                <div class="card-body m-1 ">
+                    <h6 class="card-title m-0">{$libros['titulo']}</h6>
+                    <p class="card-text p-0 m-0">{$libros['autor']}</p>
+                    <p class="mt-2 p-0" style=" color: #054082; font-weight: bold;">{$libros['disponible_para']}</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn mr-1" style=" background-color: #054082; color: white;"> <i class="bi bi-plus"></i>
+                            Llevarlo</a>
+                        <a href="#" class="btn" style=" color: #054082; border-color: #04254b;"> <i class=" bi bi-cart"></i>
+                            Añadir</a>
+                    </div>
+    
+                </div>
+            </div>
+    fin;
+                    }
             }
         }
         ?>
