@@ -25,7 +25,7 @@
 
     <div class="search-bar-header">
 
-        <h1 >¡Encuentra asombrosos libros y llevatelos a casa!</h1>
+        <h1>¡Encuentra asombrosos libros y llevatelos a casa!</h1>
         <h5>¡Llevate un libro o intercambia los que ya no uses!</h5>
         <form action="" method="POST">
             <div>
@@ -128,14 +128,16 @@
 fin;
                 }
             } else {
-                    $buscador = $_POST['buscador'];
-                    $buscar_por =  $_POST['buscar_por'];
-                    $sql = "SELECT * FROM libros, editoriales WHERE nombre_editorial LIKE '%$buscador%' order by titulo asc";
-                    $sentencia = $conexion->prepare($sql);
-                    $sentencia->execute();
-                    foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
-    
-                        echo <<<fin
+              
+                $buscador = $_POST['buscador'];
+                $buscar_por =  $_POST['buscar_por'];
+                $sql = "select * from libros, editoriales where editoriales.nombre_editorial like '%$buscador%'
+                    and libros.id_editorial = editoriales.id_editorial order by libros.titulo asc;";
+                $sentencia = $conexion->prepare($sql);
+                $sentencia->execute();
+                foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
+
+                    echo <<<fin
                     <div class="card  p-1 mr-4 mt-3 card-alignment">
                 <img src="images/{$libros['foto']}" class="card-img-top" style=" width: 160px; height: 220px;">
                 <div class="card-body m-1 ">
@@ -152,7 +154,7 @@ fin;
                 </div>
             </div>
     fin;
-                    }
+                }
             }
         }
         ?>
