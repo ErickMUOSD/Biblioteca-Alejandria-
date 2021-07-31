@@ -24,6 +24,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
     <title>Editar Categoria</title>
 </head>
@@ -98,7 +99,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
                             $sentencia ->bindValue(':nombre_categoria', $_POST["nombre_categoria"],PDO::PARAM_STR);
                             $sentencia ->execute();    
                             echo '<h6>Categoria Creada</h6>';
-                            echo '<div><a href="categoria.php" class="btn btn-secondary btn-sm">Categorias</a></div>';
+                            echo '<div><a href="categorias.php" class="btn btn-secondary btn-sm">Categorias</a></div>';
                         
                     }
                   ?>  
