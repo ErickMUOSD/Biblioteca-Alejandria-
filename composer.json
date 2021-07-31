@@ -1,0 +1,13 @@
+{
+    "name": "victo/biblioteca-alejandria",
+    "authors": [
+        {
+            "name": "2021 DSM33 Perez Cuadros Victor Eduardo",
+            "email": "al222010016@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "rakit/validation": "^1.4"
+    }
+}
