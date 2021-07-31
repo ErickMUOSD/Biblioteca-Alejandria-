@@ -104,7 +104,7 @@
             if ($_POST['buscar_por'] != 'editorial') {
 
                 $buscador = $_POST['buscador'];
-                $buscar_por =  $_POST['buscar_por'];
+                $buscar_por =  $_POST['buscar_por']; //swtich(post) case para titutlo, autor, idioma, editorial 
                 $sql = "SELECT * FROM libros WHERE $buscar_por LIKE '%$buscador%' order by titulo asc";
                 $sentencia = $conexion->prepare($sql);
                 $sentencia->execute();
