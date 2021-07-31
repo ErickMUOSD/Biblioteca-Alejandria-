@@ -25,6 +25,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
     <title>Crear Categoria</title>
 </head>

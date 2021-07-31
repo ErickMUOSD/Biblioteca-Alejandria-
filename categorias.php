@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
     <title>Categorías</title>
 </head>
