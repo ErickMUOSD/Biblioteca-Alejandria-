@@ -22,6 +22,7 @@ select{
 }
 
 .btn {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     background-color: #054082;
     color: white;
     margin-right: 30px;

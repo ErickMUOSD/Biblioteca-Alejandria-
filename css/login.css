@@ -1,0 +1,77 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #efeff0;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    margin: 10px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.card-body {
+    padding: 0;
+    margin: 0;
+}
+
+a:active {
+    color: #054082;
+}
+
+a:visited {
+    color: #054082;
+    ;
+}
+
+input {
+    display: inline-block;
+}
+
+img {
+    width: 80%;
+    height: 90%;
+}
+
+.left-side {
+    text-align: center;
+    width: 45%;
+}
+
+.right-side {
+    margin: 100px;
+    width: 55%;
+}
+
+.horizontal-line {
+    border-left: 1px solid #0C3D73;
+    height: 100vh;
+}
+
+.btn-submit {
+    text-align: center;
+}
+input{
+    
+    height: 50px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    
+}
+
+.submit-btn {
+    background-color: #054082;
+    color: white;
+    height: 45px;
+    width: 90%;
+    font-weight: bold;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}

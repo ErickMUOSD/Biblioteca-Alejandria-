@@ -106,7 +106,7 @@ function addBook() {
 
 }
 function clearInputForm() {
-    $('#form').find('input:text, textarea, input:file')
+    $('#form').find('input:text, textarea, input:file, img')
         .each(function () {
             $(this).val('');
         });
