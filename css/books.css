@@ -10,11 +10,11 @@ h1 {
 select{
     display: block;
 }
-.nav-group {
+/* .nav-group {
     background-color: #054082;
     height: 80px;
     border-bottom: 1px solid rgba(70, 140, 207, 0.5);
-}
+} */
 
 .section-upload-btn {
     display: flex;
