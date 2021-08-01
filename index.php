@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -22,11 +23,30 @@
     require_once('./framgents-html/navegation.html');
 
     ?>
+    <div class="landscape d-flex flex-direction-row  justify-content-center">
+        <div class="left-side-landpage ">
 
+            <!-- <svg class="title-circle" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#D2E4FA" d="M39.4,-32.2C54.5,-12.5,72.5,4.1,72.5,21.5C72.5,39,54.4,57.3,35,62.8C15.6,68.4,-5.3,61.3,-23.3,51.4C-41.3,41.6,-56.5,29,-65,9.7C-73.5,-9.6,-75.4,-35.6,-63.4,-54.6C-51.5,-73.7,-25.7,-85.8,-6.8,-80.3C12.2,-74.9,24.3,-52,39.4,-32.2Z" transform="translate(100 100)" />
+            </svg> -->
+            <div class="title">
+
+                <h2>¡Encuentra asombrosos libros y llevatelos a casa!</h2>
+                <h5>Llevate un libro o intercambia los que ya no uses.</h5>
+                <p class="title-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo auctor erat, ac sodales urna tincidunt eu. Vivamus tempus, metus sit amet maximus consectetur, eros est fermentum libero, sed pellentesque quam metus vel justo. Donec nunc nisl, tincidunt et turpis scelerisque, porta accumsan felis. Nam ut mauris tempor nisl vulputate pretium. Vestibulum nibh lorem, vehicula et felis eget, dapibus molestie elit. Curabitur rutrum gravida risus,.</p>
+                <button class="title-btn">Busca un libro</button>
+            </div>
+
+
+
+        </div>
+        <div class="right-side-landpage">
+            <img class="image-index" src="images_system\inicio_imagen.png" alt="Mujer volando sobre un libro">
+        </div>
+    </div>
     <div class="search-bar-header">
 
-        <h1>¡Encuentra asombrosos libros y llevatelos a casa!</h1>
-        <h5>¡Llevate un libro o intercambia los que ya no uses!</h5>
+
         <form action="" method="POST">
             <div>
                 <div class="row height d-flex justify-content-center align-items-center">
