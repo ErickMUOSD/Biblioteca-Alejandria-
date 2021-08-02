@@ -11,10 +11,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo']) && isset($_P
     $usuario = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     if (null == $usuario) {
-       
-
-        
-        header('Location: login.php?error=true');
+header('Location: login.php?error=true');
         exit;
     }
 
@@ -23,13 +20,18 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo']) && isset($_P
         // iniciar sesión y guardar datos
         $session_factory = new Aura\Session\SessionFactory;
         $session = $session_factory->newInstance($_COOKIE);
-        $segment = $session->getSegment('viajes_experienciales');
+        $segment = $session->getSegment('usuarios');
         $segment->set('id_usuario', $usuario['id_usuario']);
         $segment->set('nombre', $usuario['nombre']);
         $segment->set('correo', $usuario['correo']);
         $segment->set('privilegio', $usuario['privilegio']);
         $segment->set('estatus_usuario', $usuario['estatus_usuario']);
-        header('Location: libros.php');
+        if($usuario['privilegio'] == 'Administrador'){
+            header('Location: panel_administrador.php');
+        }else if($usuario['privilegio'] == 'Usuario'){
+            header('Location: index.php');
+        }
+       
     } else {
 
         header('Location: login.php?error=true');
