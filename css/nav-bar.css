@@ -1,7 +1,7 @@
 .nav-group {
     background-color: #054082;
     height: 80px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     font-family: Helvetica;
 }
 
@@ -12,25 +12,26 @@
 .nav-item>a {
     color: white;
     font-size: large;
-    margin: 0 14px;
-    padding: 10px;
+     margin: 0 20px ;
+    padding:  13px 0;
 }
 
 .nav-item>a:hover {
     color: black;
     background-color: white;
-    border-radius: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    -ms-border-radius: 9px;
-    -o-border-radius: 9px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
 }
 
 .login {
+    padding: 30px;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    -ms-border-radius: 9px;
-    -o-border-radius: 9px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
 }

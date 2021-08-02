@@ -112,11 +112,13 @@ h2, h5 {
 }
 
 .search-bar-header {
+    
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #054082;
+   
+    padding: 20px 0;
 }
 
 label {
@@ -167,6 +169,7 @@ a:hover {
 .search input {
     width: 800px;
     height: 64px;
+    box-shadow: 0px 2px 13px -1px #c5c5c5;
     text-indent: 25px;
     /*border: 2px solid #ffffff;
     */
@@ -200,10 +203,17 @@ a:hover {
 }
 
 .advanced-settings i {
-    color: white;
+    color: #054082;
+    margin-right: 5px;
+}
+.advanced-settings a {
+    color: #054082;
     margin-right: 5px;
 }
 
 .image-index {
     width: 700px;
+}
+.collapse h5{
+    color: #054082
 }

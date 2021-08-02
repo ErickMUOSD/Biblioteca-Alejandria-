@@ -34,7 +34,7 @@
                 <h2>¡Encuentra asombrosos libros y llevatelos a casa!</h2>
                 <h5>Llevate un libro o intercambia los que ya no uses.</h5>
                 <p class="title-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo auctor erat, ac sodales urna tincidunt eu. Vivamus tempus, metus sit amet maximus consectetur, eros est fermentum libero, sed pellentesque quam metus vel justo. Donec nunc nisl, tincidunt et turpis scelerisque, porta accumsan felis. Nam ut mauris tempor nisl vulputate pretium. Vestibulum nibh lorem, vehicula et felis eget, dapibus molestie elit. Curabitur rutrum gravida risus,.</p>
-                <button class="title-btn">Busca un libro</button>
+                <a href="#search-bar-header"  class="title-btn">Busca un libro</a>
             </div>
 
 
@@ -44,7 +44,7 @@
             <img class="image-index" src="images_system\inicio_imagen.png" alt="Mujer volando sobre un libro">
         </div>
     </div>
-    <div class="search-bar-header">
+    <div class="search-bar-header" id="search-bar-header">
 
 
         <form action="" method="POST">
@@ -61,7 +61,7 @@
             </div>
             <div class="advanced-settings d-flex justify-content-end m-1 ">
 
-                <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> <i class="bi bi-gear"></i>Configuración avanzada</a>
+                <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> <i class="bi bi-gear"></i>Configuración avanzada</a>
             </div>
 
 
