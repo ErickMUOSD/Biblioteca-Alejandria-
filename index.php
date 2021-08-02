@@ -20,7 +20,7 @@
 
 <body>
     <?php
-    require_once('./framgents-html/navegation.html');
+    require_once('./framgents-html/navegacion_usuario.html');
 
     ?>
     <div class="landscape d-flex flex-direction-row  justify-content-center">
@@ -34,7 +34,7 @@
                 <h2>¡Encuentra asombrosos libros y llevatelos a casa!</h2>
                 <h5>Llevate un libro o intercambia los que ya no uses.</h5>
                 <p class="title-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris commodo auctor erat, ac sodales urna tincidunt eu. Vivamus tempus, metus sit amet maximus consectetur, eros est fermentum libero, sed pellentesque quam metus vel justo. Donec nunc nisl, tincidunt et turpis scelerisque, porta accumsan felis. Nam ut mauris tempor nisl vulputate pretium. Vestibulum nibh lorem, vehicula et felis eget, dapibus molestie elit. Curabitur rutrum gravida risus,.</p>
-                <a href="#search-bar-header"  class="title-btn">Busca un libro</a>
+                <a href="#search-bar-header" class="title-btn">Busca un libro</a>
             </div>
 
 
@@ -47,11 +47,11 @@
     <div class="search-bar-header" id="search-bar-header">
 
 
-        <form action="" method="POST">
+        <form action="#search" method="POST">
             <div>
                 <div class="row height d-flex justify-content-center align-items-center">
 
-                    <div class="search">
+                    <div class="search" id="search">
                         <i class="bi bi-search"></i>
                         <input type="text" name="buscador" id="buscador" class="form-control" placeholder="Busca por titulo" required>
                         <button class="btn btn-primary" value="enviar" name="enviar">Search</button>
@@ -65,7 +65,9 @@
             </div>
 
 
-            <div class="collapse w-75 " id="collapseExample" style="margin: 0 auto;">
+            <div class="
+            .
+             w-75 " id="collapseExample" style="margin: 0 auto;">
                 <h5>Buscar por:</h5>
                 <div class="card card-body d-flex flex-row bd-highlight justify-content-center mt-2 mb-2 p-1 align-items-center">
                     <div class="mr-3 ">
@@ -89,7 +91,8 @@
 
         </form>
     </div>
-    <div class="container-fluid  " style="display: flex; flex-wrap: wrap; justify-content: center; ">
+
+    <div class="container-fluid content-card " style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;  height:100%;">
 
 
         <?php
@@ -122,9 +125,15 @@
         } else if (isset($_POST['enviar'])) {
             require_once './conexion.php';
             if ($_POST['buscar_por'] != 'editorial') {
-
+              
                 $buscador = $_POST['buscador'];
-                $buscar_por =  $_POST['buscar_por']; //swtich(post) case para titutlo, autor, idioma, editorial 
+                //swtich(post) case para titutlo, autor, idioma, editorial 
+                 switch( $_POST['buscar_por']){
+                     case 'titulo':   $buscar_por = 'titulo'; break;
+                     case 'autor':   $buscar_por = 'autor';  break;
+                     case 'idioma':  $buscar_por = 'idioma'; break;
+
+                 }                 
                 $sql = "SELECT * FROM libros WHERE $buscar_por LIKE '%$buscador%' order by titulo asc";
                 $sentencia = $conexion->prepare($sql);
                 $sentencia->execute();
@@ -153,10 +162,12 @@
             fin;;
                     }
                 } else {
-                    echo '<div class=" mt-3  card w-50 h-25  align-items-center ">
-                    <h4 class="mt-2">Libro no encontrado... Intenta con otra búsqueda.</h4>
-                    <img src="images_system/recurso_no_encontrado1.png" alt="recurso no encontrado" style="width: 50%; height: 50%;">
-                </div>';
+                  
+                    echo '    <div class="m-5">
+                    <h2>Lo sentimos, no encontramos el libro que buscas. Intenta con otra búsqueda.😟</h1>
+                    
+                </div>
+            ';
                 }
             } else {
 
@@ -191,16 +202,16 @@
         fin;
                     }
                 } else {
-                    echo '<div class=" mt-3  card w-50 h-25  align-items-center ">
-                    <h4 class="mt-2">Libro no encontrado... Intenta con otra búsqueda.</h4>
-                    <img src="images_system/recurso_no_encontrado1.png" alt="recurso no encontrado" style="width: 50%; height: 50%;">
-                </div>';
+                    echo '    <div class="m-5">
+                    <h2>Lo sentimos, no encontramos el libro que buscas. Intenta con otra búsqueda.😟</h1>
+                    
+                </div>
+            ';
                 }
             }
         }
         ?>
     </div>
-
 
 
 

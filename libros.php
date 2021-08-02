@@ -20,7 +20,7 @@
 <body>
 
     <?php
-    require_once('./framgents-html/navegation.html');
+    require_once('./framgents-html/navegacion_admin.html');
 
     ?>
 
