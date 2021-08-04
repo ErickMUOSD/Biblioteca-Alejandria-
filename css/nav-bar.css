@@ -40,12 +40,7 @@
     box-shadow: 0px 0px 2px 1px whitesmoke;
 }
 /*
-
-
-
-
-6.-  agregar cerrar sesion(ver el archivo del profe)
-7.-  modificar el inicio de sesion con datos encriptados
+7.- 
 8.- arreglar el bug, sobreponer la barra, puestoque queda abajo de cualquier elemento en el body */
 .nav-link:hover  {
     color: black;
