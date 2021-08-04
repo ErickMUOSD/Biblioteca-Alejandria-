@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '042d327f5059234b13a20344c193a4c7b5135222',
+        'reference' => 'fad8014c33aaf2f926983f9b56ea389835657eb6',
         'name' => 'victo/biblioteca_alejandria',
         'dev' => true,
     ),
@@ -79,7 +79,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '042d327f5059234b13a20344c193a4c7b5135222',
+            'reference' => 'fad8014c33aaf2f926983f9b56ea389835657eb6',
             'dev_requirement' => false,
         ),
         'vlucas/phpdotenv' => array(

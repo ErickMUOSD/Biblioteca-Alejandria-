@@ -21,37 +21,18 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script defer src="bootstrap/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="js/bootstrap.min.js"></script>
     <title>Crear/Actualizar Editorial</title>
 </head>
 <body>
-    <!-- Barra de navegacion -->
-<nav class="navbar navbar-expand-lg pl-4 nav-group  flex-sm-row">
-    <a class="navbar-brand fw-bold fs-1 text-light">Biblioteca Alejandría</a>
-        <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav" style="  color: white;">
-            <ul class="navbar-nav fl">
-                <li class="nav-item ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="index.php">Libros</a>
-                </li>
-                <li class="nav-item  ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="categorias.php">Categorias</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="editoriales.php">Editoriales</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Prestamos</a>
-                </li>
-                <li class="nav-item   ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Consultas</a>
-                </li>
-            </ul>
-        </div>
-</nav>
+<?php
+    require_once('./framgents-html/navegacion_admin.html');
+
+    ?>
     <!-- Menús para crear/actualizar -->
 <div class='contaier mt-3'>
     <div class='row'>
