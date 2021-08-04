@@ -16,8 +16,9 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo']) && isset($_P
     }
 
     //password_verify($_POST['contrasena'], $usuario['contrasena']
-    if ($_POST['contrasena'] == $usuario['contrasena']) {
-        // iniciar sesión y guardar datos
+    //$_POST['contrasena'] == $usuario['contrasena']
+    if (password_verify($_POST['contrasena'], $usuario['contrasena'])) {
+       
         $session_factory = new Aura\Session\SessionFactory;
         $session = $session_factory->newInstance($_COOKIE);
         $segment = $session->getSegment('usuarios');
