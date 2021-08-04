@@ -3,12 +3,16 @@ body {
     width: 100%;
     margin: 0;
     background-color: #F2F7FF;
+    padding: 0;
 }
 
 .vertical-nav {
     height: 100vh;
 }
 
+.navbar-collapse{
+    width: 100%;
+}
 .icon-perfil {
     width: 16px;
     height: 20px;

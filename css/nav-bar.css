@@ -8,27 +8,22 @@
 
 .navbar-brand {
     font-size: x-large;
-}
-
-.material-icons {
-    color: #ffffff;
+    margin-left: 20px;
 }
 
 .navbar-collapse>ul {
     background-color: #054082;
 }
+.container-fluid{
+ padding-left: 0;
+ padding-right: 0;   
+}
 
 .nav-item>a {
     display: flex;
     align-items: center;
-    color: white;
     font-size: large;
     padding: 10px 0;
-}
-
-.navbar-toggler:focus {
-   
-    box-shadow: 0 0 0 rgb(255, 255, 255);
 }
 
 .nav-item {
@@ -36,8 +31,23 @@
     box-shadow: none;
 }
 
-.nav-item>a:hover {
-    padding: 10px 0;
+.nav-link {
+    color: white;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: 0px 0px 2px 1px whitesmoke;
+}
+/*
+
+
+
+
+6.-  agregar cerrar sesion(ver el archivo del profe)
+7.-  modificar el inicio de sesion con datos encriptados
+8.- arreglar el bug, sobreponer la barra, puestoque queda abajo de cualquier elemento en el body */
+.nav-link:hover  {
     color: black;
     background-color: white;
     border-radius: 12px;
@@ -46,18 +56,34 @@
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
 }
+.nav-link:hover span{
+    color: rgb(7, 7, 7);
+}
 
 .dropdown>a {
     border-radius: 5px;
     font-size: large;
-    margin: 0 30px;
+  
     color: white;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
+.dropdown>a:hover {
+    border-radius: 5px;
+    font-size: large;
+   background-color: white;
+    color: rgb(0, 0, 0);
+    
+}
+.dropdown:hover span{
+    color: black;
+    background-color: white;
+}
+
 
 .material-icons {
     margin: 0 5px;
+    color: #ffffff;
 }
