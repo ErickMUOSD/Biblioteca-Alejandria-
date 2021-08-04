@@ -10,6 +10,8 @@
 }
 
 .nav-item>a {
+    display: flex;
+    align-items: center;
     color: white;
     font-size: large;
     padding: 10px 0;
@@ -31,3 +33,16 @@
     -o-border-radius: 12px;
 }
 
+.dropdown >a{
+    border-radius: 5px;
+    font-size: large;
+    margin: 0  30px  ;
+    color: white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.material-icons {
+    margin: 0  5px;
+  }

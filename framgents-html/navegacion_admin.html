@@ -1,73 +1,57 @@
-<!-- Barra de navegacion -->
-<div class="vertical-nav bg-white" id="sidebar">
-    <div class="py-4 px-3 mb-4 bg-light">
-        <div class="media d-flex align-items-center">
-            <!-- <i class="bi bi-person-circle icon-perfil" ></i> -->
-            <!-- <img src="https://res.cloudinary.com/mhmd/image/upload/v1556074849/avatar-1_tcnd60.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm"> -->
-            <div class="media-body">
-                <h4 class="m-0">Usuario</h4>
-                <p class="font-weight-light text-muted mb-0"></p>
-            </div>
-        </div>
+<nav class="navbar navbar-expand-lg pl-4 nav-group  flex-sm-row">
+
+    <a class=" m-2 navbar-brand   text-light">Biblioteca Alejandría</a>
+
+    <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav">
+        <ul class="navbar-nav fl">
+            <li class="nav-item ">
+
+                <a class="nav-link " aria-current="page" href="libros.php"> <span class="material-icons">
+                        menu_book
+                    </span>Libros</a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link" aria-current="page" href="editoriales.php">
+                    <span class="material-icons">
+                        person_add
+                    </span> Usuarios</a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link " aria-current="page" href="categorias.php"><span class="material-icons">
+                        edit_note
+                    </span>Editoriales</a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link " aria-current="page" href="categorias.php"> <span class="material-icons">
+                        category
+                    </span>Categorias</a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link " aria-current="page" href="categorias.php"><span class="material-icons">
+                        paid
+                    </span>
+                    Prestamos</a>
+            </li>
+            <li class="nav-item  ">
+                <a class="nav-link " aria-current="page" href="categorias.php">
+                    <span class="material-icons">
+                        autorenew
+                    </span>Intercambios</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            
+            Usuario
+        </a>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+            <li><a class="dropdown-item" href="#">Salir</a></li>
+
+        </ul>
     </div>
 
-    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Main</p>
-
-    <ul class="nav flex-column bg-white mb-0">
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic ">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                Libros
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-                Usuarios
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-               Intercambios
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-               Prestamos
-            </a>
-        </li>
-    </ul>
-
-    <!-- <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">Charts</p>
-
-    <ul class="nav flex-column bg-white mb-0">
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
-                Area charts
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
-                Bar charts
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
-                Pie charts
-            </a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-dark font-italic">
-                <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
-                Line charts
-            </a>
-        </li>
-    </ul> -->
-</div>
-
-</div>
+</nav>

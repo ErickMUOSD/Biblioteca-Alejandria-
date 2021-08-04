@@ -9,20 +9,21 @@
     <script defer src="js/bootstrap.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"> </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/panel_administracion.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <title>Document</title>
 </head>
 
 <body>
 
+    <?php
+    require_once('./framgents-html/navegacion_admin.html');
 
+    ?>
     <div class="  d-flex flex-row ">
         <div class="left-side ">
-            <?php
-            require_once('./framgents-html/navegacion_admin.html');
 
-            ?>
             <div class="horizontal-line"></div>
             <div class=" right-side ">
 
