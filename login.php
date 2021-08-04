@@ -11,7 +11,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo']) && isset($_P
     $usuario = $sentencia->fetch(PDO::FETCH_ASSOC);
 
     if (null == $usuario) {
-header('Location: login.php?error=true');
+        header('Location: login.php?error=true');
         exit;
     }
 
@@ -26,12 +26,11 @@ header('Location: login.php?error=true');
         $segment->set('correo', $usuario['correo']);
         $segment->set('privilegio', $usuario['privilegio']);
         $segment->set('estatus_usuario', $usuario['estatus_usuario']);
-        if($usuario['privilegio'] == 'Administrador'){
+        if ($usuario['privilegio'] == 'Administrador') {
             header('Location: panel_administrador.php');
-        }else if($usuario['privilegio'] == 'Usuario'){
+        } else if ($usuario['privilegio'] == 'Usuario') {
             header('Location: index.php');
         }
-       
     } else {
 
         header('Location: login.php?error=true');
@@ -49,11 +48,12 @@ header('Location: login.php?error=true');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <script defer src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"> </script>
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
+    <script defer src="js/bootstrap.min.js"></script>
+    <script  defer src="js/jquery-3.6.0.min.js"> </script>
 </head>
 
 <body>

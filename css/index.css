@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
     width: 100%;
-    background-color: #efeff0;
+    background-color: #F2F7FF;
 }
 
 .collapse {
@@ -21,7 +21,9 @@ body, html {
 h2, h5 {
     margin: 25px 0;
 }
+
 /*Si añades estas lineas se agregará más diseño*/
+
 /* 
 .title {
     width: 50%;
@@ -31,6 +33,7 @@ h2, h5 {
     right: 0;
     bottom: 0;
 } */
+
 /* 
 .title-circle {
     width: 400px;
@@ -96,9 +99,27 @@ h2, h5 {
     text-transform: none;
 }
 
-.card * {
-    color: black;
+.card-info {
+    padding: 0;
+    margin: 10px 20px;
+}
+.card-info > p{
+    margin:  2px 0;
+}
+.card-img-top {
+    text-align: center;
+    width: 160px;
+    height: 220px;
+    margin: 0 auto;
+}
+.card-info > h5{
     margin: 0;
+}
+.btn-get-book {
+    background-color: #054082;
+    color: white;
+    display: block;
+    margin: 5px 0;
 }
 
 .card {
@@ -109,20 +130,21 @@ h2, h5 {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border: none;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .search-bar-header {
-    
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
     padding: 20px 0;
 }
 
 label {
-    color: azure;
+    margin: 0 10px;
+    color: rgb(0, 0, 0);
 }
 
 .search-bar-header h2 {
@@ -141,13 +163,6 @@ label {
     color: white;
 }
 
-.card-alignment {
-    width: 15rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 a {
     color: white
 }
@@ -163,7 +178,7 @@ a:hover {
 .search {
     width: 100%;
     position: relative;
-    box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+  
 }
 
 .search input {
@@ -173,6 +188,7 @@ a:hover {
     text-indent: 25px;
     /*border: 2px solid #ffffff;
     */
+    padding: 5px;
     font-size: larger;
     border: none;
     border-radius: 8px;
@@ -197,7 +213,7 @@ a:hover {
 .search button {
     position: absolute;
     top: 7px;
-    right: 10px;
+    right: 15px;
     height: 50px;
     background: #054082;
 }
@@ -206,6 +222,7 @@ a:hover {
     color: #054082;
     margin-right: 5px;
 }
+
 .advanced-settings a {
     font-weight: 500;
     color: #054082;
@@ -215,6 +232,7 @@ a:hover {
 .image-index {
     width: 700px;
 }
-.collapse h5{
+
+.collapse h5 {
     color: #054082
 }
