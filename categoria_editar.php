@@ -74,11 +74,12 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
                         // es post y todo esta bien creamos
                         require_once './conexion.php';
                             //Crear 
-                            $sql = 'insert into categorias (nombre_categoria,estatus_categoria) values (:nombre_categoria, "Activo")';
+                            $sql = 'update categorias set nombre_categoria = :nombre_categoria where id_categoria = :id_categoria ';
                             $sentencia = $conexion->prepare($sql);
                             $sentencia ->bindValue(':nombre_categoria', $_POST["nombre_categoria"],PDO::PARAM_STR);
+                            $sentencia ->bindValue(':id_categoria', $_GET ["id_categoria"],PDO::PARAM_INT);
                             $sentencia ->execute();    
-                            echo '<h6>Categoria Creada</h6>';
+                            echo '<h6>Categoria Actualizada</h6>';
                             echo '<div><a href="categorias.php" class="btn btn-secondary btn-sm">Categorias</a></div>';
                         
                     }
