@@ -1,19 +1,125 @@
 body, html {
     height: 100%;
     width: 100%;
-    background-color: #efeff0;
+    background-color: #F2F7FF;
 }
 
 .collapse {
     width: 50%;
     margin-bottom: 10px;
     margin: 0 auto;
-    
 }
 
-.card *  {
-    color: black;
+.left-side-landpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 50px;
+    width: 50%;
+}
+
+h2, h5 {
+    margin: 25px 0;
+}
+
+/*Si añades estas lineas se agregará más diseño*/
+
+/* 
+.title {
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 70px;
+    right: 0;
+    bottom: 0;
+} */
+
+/* 
+.title-circle {
+    width: 400px;
+    position: absolute;
+    top: 20%;
+    left: 30px;
+    right: 0;
+    bottom: 0;
+} */
+
+.title>h2 {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 40px;
+    letter-spacing: -1px;
+    word-spacing: -1px;
+    color: #054082;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+
+.title-btn {
+    box-shadow: 0px 2px 13px -1px #053f82;
+    background-color: #053f82;
+    border-radius: 25px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 15px 36px;
+    text-decoration: none;
+    border: none;
+    margin-top: 15px;
+}
+
+.title-text {
+    color: #888888;
+}
+
+.title-btn:hover {
+    background-color: #053f82;
+    box-shadow: 0px 2px 16px -1px #053f82;
+}
+
+.title-btn:active {
+    position: relative;
+    top: 1px;
+}
+
+.title>h5 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 25px;
+    letter-spacing: -1px;
+    word-spacing: -1px;
+    color: #054082;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+.card-info {
+    padding: 0;
+    margin: 10px 20px;
+}
+.card-info > p{
+    margin:  2px 0;
+}
+.card-img-top {
+    text-align: center;
+    width: 160px;
+    height: 220px;
+    margin: 0 auto;
+}
+.card-info > h5{
     margin: 0;
+}
+.btn-get-book {
+    background-color: #054082;
+    color: white;
+    display: block;
+    margin: 5px 0;
 }
 
 .card {
@@ -24,6 +130,8 @@ body, html {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border: none;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .search-bar-header {
@@ -31,14 +139,15 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #054082;
+    padding: 20px 0;
 }
 
 label {
-    color: azure;
+    margin: 0 10px;
+    color: rgb(0, 0, 0);
 }
 
-.search-bar-header h1 {
+.search-bar-header h2 {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 0;
@@ -46,21 +155,12 @@ label {
     color: white;
 }
 
-
-
 .search-bar-header h5 {
     font-size: 1.125rem;
     font-weight: 400;
     margin-bottom: 20px;
     text-align: center;
     color: white;
-}
-
-.card-alignment {
-    width: 15rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 a {
@@ -76,18 +176,19 @@ a:hover {
 }
 
 .search {
-
     width: 100%;
     position: relative;
-    box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+  
 }
 
 .search input {
     width: 800px;
     height: 64px;
+    box-shadow: 0px 2px 13px -1px #c5c5c5;
     text-indent: 25px;
     /*border: 2px solid #ffffff;
     */
+    padding: 5px;
     font-size: larger;
     border: none;
     border-radius: 8px;
@@ -95,12 +196,11 @@ a:hover {
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
-    
 }
 
 .search input:focus {
     box-shadow: none;
-    border: 2px solid #054082;
+    box-shadow: 0px 2px 25px -1px #c5c5c5;
 }
 
 .search .bi-search {
@@ -113,12 +213,26 @@ a:hover {
 .search button {
     position: absolute;
     top: 7px;
-    right: 10px;
+    right: 15px;
     height: 50px;
     background: #054082;
 }
 
 .advanced-settings i {
-    color: white;
+    color: #054082;
     margin-right: 5px;
+}
+
+.advanced-settings a {
+    font-weight: 500;
+    color: #054082;
+    margin-right: 5px;
+}
+
+.image-index {
+    width: 700px;
+}
+
+.collapse h5 {
+    color: #054082
 }

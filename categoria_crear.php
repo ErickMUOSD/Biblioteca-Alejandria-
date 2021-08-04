@@ -23,7 +23,9 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
     <title>Crear Categoria</title>
 </head>
@@ -34,10 +36,10 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
         <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav" style="  color: white;">
             <ul class="navbar-nav fl">
                 <li class="nav-item ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Libros</a>
+                    <a class="nav-link active text-light" aria-current="page" href="index.php">Libros</a>
                 </li>
                 <li class="nav-item  ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Categorias</a>
+                    <a class="nav-link active text-light" aria-current="page" href="categorias.php">Categorias</a>
                 </li>
                 <li class="nav-item ml-4 mr-4 ">
                     <a class="nav-link active text-light" aria-current="page" href="editoriales.php">Editoriales</a>

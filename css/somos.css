@@ -1,24 +1,5 @@
-body {
-    font-family: Arial, Helvetica, Sans-serif;
-    color: white;
-    background-color: blue;
-    font-size: 12px;
-  }
-  
-  .contenido {
-    font-size: 100%;
-  }
-  p { 
-      line-height: 1.5; 
-      font-weight: bold; 
-      font-style: italic;
-    }
-    h1 { 
-        text-transform: capitalize;
-     }
+img {
+    width: 200px; 
+    height: 550px; 
 
-
-
-
-
-
+}

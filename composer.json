@@ -1,10 +1,14 @@
 {
-    "name": "raul/biblioteca-alejandria",
+    "name": "victo/biblioteca_alejandria",
     "authors": [
         {
-            "name": "2021 DSM33 Valeria Yamin Anastasio Mejia",
-            "email": "al222010297@gmail.com"
+            "name": "2021 DSM33 Perez Cuadros Victor Eduardo",
+            "email": "al222010016@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "rakit/validation": "^1.4",
+        "aura/session": "^2.1"
+    }
 }
