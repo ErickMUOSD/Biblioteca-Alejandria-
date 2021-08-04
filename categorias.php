@@ -21,29 +21,7 @@
     require_once('./framgents-html/navegacion_admin.html');
 ?>
 
-    <!-- Barra de navegacion -->
-    <nav class="navbar navbar-expand-lg pl-4 nav-group flex-sm-row">
-        <a class="navbar-brand fw-bold fs-1 text-light">Biblioteca Alejandría</a>
-        <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav" style="  color: white;">
-            <ul class="navbar-nav fl">
-                <li class="nav-item ml-4 mr-4"></li>
-                <a class="nav-link active text-light" aria-current="page" href="index.php">Libros</a>
-                </li>
-                <li class="nav-item  ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="categorias.php">Categorias</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="editoriales.php">Editoriales</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Prestamos</a>
-                </li>
-                <li class="nav-item   ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Consultas</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  
 
     <!-- Tabla -->
    
