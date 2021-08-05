@@ -32,7 +32,7 @@ require_once './checar_sesion.php';
 
     <div class="container-fluid ">
 
-        <div class="card mt-2">
+        <div class="card m-3">
             <div class="card-body">
                 <div class="section-upload-btn">
                     <h1>Libros</h1>

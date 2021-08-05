@@ -145,7 +145,7 @@ function getCategoryandEditorial(currentIdCategory, currentIdEditorial) {
         });
     });
 
-    $.getJSON("editorial_libro.php", { cache: false }, function (data) {
+    $.getJSON("libro_editorial.php", { cache: false }, function (data) {
         data.data.forEach(function (values) {
             selected = (currentIdEditorial === values['id_editorial'] ? "selected" : " ")
             $("#editorial_libro").append("<option value='" + values['id_editorial'] + "' " + selected + ">" + values['nombre_editorial'] + "</option>")
