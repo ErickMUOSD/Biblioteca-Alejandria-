@@ -19,7 +19,7 @@
 
 <body>
     <?php
-    require_once('./framgents-html/navegacion_usuario.html');
+    require_once('./framgents-html/navegacion_usuario.php');
 
     ?>
     <div class="landscape d-flex flex-direction-row  justify-content-center">
