@@ -12,7 +12,7 @@
     
     <title>Categorías</title>
 </head>
-<body>
+<body style="background-color: #F2F7FF;">
 
 <!DOCTYPE html>
 <html lang="es-Mx">
