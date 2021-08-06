@@ -11,14 +11,14 @@
     <script defer src="js/bootstrap.min.js"></script>
     <title>Usuarios</title>
 </head>
-<body>
+<body style="background-color: #F2F7FF;">
 <?php
     require_once('./framgents-html/navegacion_admin.html');
 
     ?>
 
     <!-- Tabla de editoriales -->
-    <div class='container mt-3'>
+    <div class='container-fluid m-5'>
         <div class='row'>
             <div class='col-3'></div>
             <div class='col-11'>
@@ -37,7 +37,6 @@
                                     <th style="width=80%;">Primer Apellido</th>
                                     <th style="width=80%;">Segundo Apellido</th>
                                     <th style="width=80%;">Correo</th>
-                                    <th style="width=80%;">Contraseña</th>
                                     <th style="width=80%;">Telefono</th>
                                     <th style="width=80%;">Estatus</th>
                                     <th style="width=80%;">Privilegio</th>
@@ -61,7 +60,6 @@
                                     <td>{$usuario['primer_apellido']}</td>
                                     <td>{$usuario['segundo_apellido']}</td>
                                     <td>{$usuario['correo']}</td>
-                                    <td>{$usuario['contrasena']}</td>
                                     <td>{$usuario['numero_celular']}</td>
                                     <td>{$usuario['estatus_usuario']}</td>
                                     <td>{$usuario['privilegio']}</td>
