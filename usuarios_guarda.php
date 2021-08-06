@@ -30,6 +30,8 @@
                         <?php
 require('vendor/autoload.php');
 
+//validar y ejecutar sentencia de direcciones
+
 use Rakit\Validation\Validator;
 
 $validator = new Validator;

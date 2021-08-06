@@ -63,6 +63,11 @@
                                     <td>{$usuario['numero_celular']}</td>
                                     <td>{$usuario['estatus_usuario']}</td>
                                     <td>{$usuario['privilegio']}</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href="usuarios_editar.php?id_usuario={$usuario['id_usuario']}" title="Clic para editar usuario">
+                                            <i class="bi-pencil-square"></i> Editar
+                                        </a>
+                                    </td>
                                 </tr>
 fin;
                                 }
