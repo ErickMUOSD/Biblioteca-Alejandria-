@@ -13,31 +13,12 @@
 </head>
 <body>
 
+    <?php
+    require_once('./framgents-html/navegacion_usuario.php');
 
-    <!-- Barra de navegacion -->
-      <nav class="navbar navbar-expand-lg pl-4 nav-group flex-sm-row">
-        <a class="navbar-brand fw-bold fs-1 text-light">Biblioteca Alejandría</a>
-        <div class="collapse navbar-collapse justify-content-lg-center" id="navbarNav" style="  color: white;">
-            <ul class="navbar-nav fl">
-                <li class="nav-item ml-4 mr-4">
-                <a class="nav-link active text-light" aria-current="page" href="#">Libros</a>
-                </li>
-                <li class="nav-item  ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Categorias</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Editoriales</a>
-                </li>
-                <li class="nav-item ml-4 mr-4 ">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Prestamos</a>
-                </li>
-                <li class="nav-item   ml-4 mr-4">
-                    <a class="nav-link active text-light" aria-current="page" href="#">Consultas</a>
-                </li>
-            </ul>
-        </div>
-    </nav> 
+    ?>
 
+    
    <div class="container">
     <h1 class="text-center">¿Quienes Somos? </h1>
     <hr />
