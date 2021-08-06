@@ -12,7 +12,7 @@
     
     <title>Categorías</title>
 </head>
-<body>
+<body style="background-color: #F2F7FF;">
 
 <?php
     require_once('./framgents-html/navegacion_admin.html');
@@ -21,11 +21,13 @@
   
 
     <!-- Tabla -->
-   
-    <table class="table table-hover table-bordered table-sm">
+   <div class="container-fluid m-3" >
+   <div class='card'>
+   <div class='card-body'>
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
-                <th style="width: 20%;"scope="col">Id Categoría</th>
+               
                 <th style="width: 40%;"scope="col">Nombre de la Categoría</th>
                 <th style="width: 20%;"scope="col">Estatus de la Categoría</th> 
                 <th style="width: 20%;">
@@ -37,7 +39,7 @@
                 </th>
             </tr>
         </thead>
-        
+    
         <?php
                                 require_once './conexion.php';
                                 $sql = 'select id_categoria, nombre_categoria, estatus_categoria from categorias order by nombre_categoria asc';
@@ -58,7 +60,9 @@
 fin;
                                 }
                                 ?>
-
+</div>
+        </div>
+     </div>
       
 </body>
 </html>
