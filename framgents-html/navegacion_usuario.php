@@ -14,7 +14,7 @@
                         </span>Libros</a>
                 </li>
                 <li class="nav-item  ">
-                    <a class="nav-link" aria-current="page" href="somos.html">
+                    <a class="nav-link" aria-current="page" href="somos.php">
                         <span class="material-icons">
                             person_add
                         </span>Acerca de nostros</a>
