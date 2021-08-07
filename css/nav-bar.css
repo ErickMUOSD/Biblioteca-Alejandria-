@@ -21,6 +21,7 @@
 }
 
 .nav-item>a {
+    color: white;
     display: flex;
     align-items: center;
     font-size: large;
@@ -38,11 +39,13 @@
 .navbar-toggler:focus {
     text-decoration: none;
     outline: 0;
-    box-shadow: 0px 0px 2px 1px whitesmoke;
+    box-shadow: 0px 0px 2px 1px whitesmoke !important;
 }
-
+.nav-link>a:hover{
+    color: black !important;
+}
 .nav-link:hover  {
-    color: black;
+    color: black !important;
     background-color: white;
     border-radius: 12px;
     -webkit-border-radius: 12px;
