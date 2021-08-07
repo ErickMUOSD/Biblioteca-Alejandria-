@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script defer src="js/bootstrap.min.js"></script>
+    
     
     <title>Categorías</title>
 </head>
@@ -79,6 +79,6 @@ fin;
 </div>
         </div>
      </div>
-      
+     <script  src="js/bootstrap.min.js"></script>
 </body>
 </html>

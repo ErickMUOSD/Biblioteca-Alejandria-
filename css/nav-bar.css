@@ -16,8 +16,8 @@
     background-color: #054082;
 }
 .container-fluid{
- padding-left: 0;
- padding-right: 0;   
+ padding-left: 0  !important;
+ padding-right: 0  !important;   
 }
 
 .nav-item>a {
@@ -29,7 +29,7 @@
 }
 
 .nav-item {
-    margin: 0 5px;
+    margin-left:  5px;
     box-shadow: none;
 }
 
