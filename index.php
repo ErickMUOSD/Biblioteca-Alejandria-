@@ -11,9 +11,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <script defer src="js/bootstrap.min.js"></script>
-
-
     <title>Document</title>
 </head>
 
@@ -86,13 +83,14 @@
         </form>
     </div>
 
-    <div class="container-fluid content-card " style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;  height:100%;">
+    <div id="content-card" class="container-fluid content-card " style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start;  height:100%;">
 
 
         <?php
         $directionFile;
         $titleBtn;
         $launchModal;
+        $modalInfo;
         if (!isset($_POST['enviar'])) {
             require_once './conexion.php';
             $sql = "SELECT * FROM libros ";
@@ -100,9 +98,14 @@
             $sentencia->execute();
 
             foreach ($sentencia->fetchAll(PDO::FETCH_ASSOC) as $libros) {
+                $modalInfo = ", data-bs-title ='{$libros['titulo']}', data-bs-book-autor ='{$libros['autor']}' , data-bs-book-lenguaje ='{$libros['idioma']}' , 
+                    data-bs-book-description ='{$libros['descripcion']}' , data-bs-book-numero_paginas='{$libros['numero_paginas']}' , data-bs-book-year-edition ='{$libros['anio_edicion']}' ,
+                    data-bs-book-img ='{$libros['foto']}' , data-bs-book-disponibility ='{$libros['disponible_para']}' , data-bs-book-price ='{$libros['precio']}' , 
+                    data-bs-book-cant ='{$libros['cantidad_libros']}' , data-bs-book-status ='{$libros['estatus_libro']}'";
                 if (empty($segment->get('id_usuario')) || !is_numeric($segment->get('id_usuario')) || 'Administrador' != $segment->get('privilegio')) {
                     $titleBtn = 'Más informacion';
                     $launchModal = ' data-bs-toggle="modal" data-bs-target="#exampleModal" ';
+
                     $directionFile = '';
                 } else {
                     $launchModal = '';
@@ -113,14 +116,15 @@
                 echo <<<fin
                 <div class="card" >
                 <img class="card-img-top"  src="images/{$libros['foto']}" alt="" s">
-                <div class="card-info" >
+                <div class="card-info" id="card-info" >
                     <h5>{$libros['titulo']}</h5>
                     <p class= 'fw-lighter'>Autor: <span  class="fw-normal" >  {$libros['autor']}</span></p>
                     <p class= 'fw-lighter'>Idioma: <span  class="fw-normal" >  {$libros['idioma']}</span></p>
+                    <p class= 'fw-lighter'>Precio: $<span  class="fw-normal" >{$libros['precio']}</span></p>
                     <p class= 'fw-lighter'>Disponible para:<span class="fw-bold" style = "color:#07ab49;"> {$libros['disponible_para']}</span> </p>
                    
                    
-                        <a href="$directionFile" $launchModal  class="btn btn-get-book " > <i style=" color: white;" class="bi bi-plus"></i>
+                        <a href="$directionFile" $launchModal  $modalInfo   class="btn btn-get-book " > <i style=" color: white;" class="bi bi-plus"></i>
                         $titleBtn</a>
                
                 </div>
@@ -160,16 +164,17 @@
                         } else {
                             $launchModal = '';
                             $titleBtn = 'Llevarme este libro';
-                            $directionFile = ($libros['disponible_para'] == 'Préstamo') ? 'prestamo_realizar.php' : 'intercambio_realizar.php';
+                            $directionFile += ($libros['disponible_para'] == 'Préstamo') ? 'prestamo_realizar.php' : 'intercambio_realizar.php';
                         }
 
                         echo <<<fin
                         <div class="card" >
-                        <img class="card-img-top"  src="images/{$libros['foto']}" alt="" s">
+                        <img class="card-img-top"  src="images/{$libros['foto']}" alt="" ">
                         <div class="card-info" >
                             <h5>{$libros['titulo']}</h5>
                             <p class= 'fw-lighter'>Autor: <span  class="fw-normal" >  {$libros['autor']}</span></p>
                             <p class= 'fw-lighter'>Idioma: <span  class="fw-normal" >  {$libros['idioma']}</span></p>
+                            <p class= 'fw-lighter'>Precio: $<span  class="fw-normal" >{$libros['precio']}</span></p>
                             <p class= 'fw-lighter'>Disponible para:<span class="fw-bold" style = "color:#07ab49;"> {$libros['disponible_para']}</span> </p>
                            
                            
@@ -204,14 +209,14 @@
                     foreach ($sentencia  as $row => $libros) {
                         if (empty($segment->get('id_usuario')) || !is_numeric($segment->get('id_usuario')) || 'Administrador' != $segment->get('privilegio')) {
                             $titleBtn = 'Más informacion';
-                            $launchModal = ' data-bs-toggle="modal" data-bs-target="#exampleModal" ';
+                            $launchModal = ' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick"" ';
                             $directionFile = '';
                         } else {
                             $launchModal = '';
                             $titleBtn = 'Llevarme este libro';
-                            $directionFile= ($libros['disponible_para'] == 'Préstamo') ? 'prestamo_realizar.php' : 'intercambio_realizar.php';
+                            $directionFile = ($libros['disponible_para'] == 'Préstamo') ? 'prestamo_realizar.php' : 'intercambio_realizar.php';
                         }
-        
+
                         echo <<<fin
                         <div class="card" >
                         <img class="card-img-top"  src="images/{$libros['foto']}" alt="" s">
@@ -219,6 +224,7 @@
                             <h5>{$libros['titulo']}</h5>
                             <p class= 'fw-lighter'>Autor: <span  class="fw-normal" >  {$libros['autor']}</span></p>
                             <p class= 'fw-lighter'>Idioma: <span  class="fw-normal" >  {$libros['idioma']}</span></p>
+                            <p class= 'fw-lighter'>Precio: $<span  class="fw-normal"  >{$libros['precio']}</span></p>
                             <p class= 'fw-lighter'>Disponible para:<span class="fw-bold" style = "color:#07ab49;"> {$libros['disponible_para']}</span> </p>
                            
                            
@@ -242,25 +248,40 @@
         ?>
     </div>
 
+
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-lg">
+
+            <div class="card card-info">
+                <div style=" display: flex;
+  justify-content: space-evenly; align-items:center">
+                    <div class="  " style="width: auto; ">
+                        <img class="card-img-top" id="img-modal" alt="" s">
+                    </div>
+                    <div class=" right-modal-side mt-3" style="width: 50%;">
+                        <h4 id="title-modal"></h4>
+                        <p class='fw-lighter'> <span  class="fw-bold" id="avaliable-modal"  > </span></p>
+                        <p class='fw-lighter'>Autor: <span class="fw-normal" id="autor-modal"> </span></p>
+                        <p class='fw-lighter'>Idioma: <span class="fw-normal" id="lenguaje-modal"> </span></p>
+                        <p class='fw-lighter'>Descripcion: <span class="fw-normal" id="descripcion-modal"> </span></p>
+                        <p class='fw-lighter'>Numero de páginas: <span class="fw-normal" id="numero-paginas-modal"> </span></p>
+                        <p class='fw-lighter'>Año de edición: <span class="fw-normal" id="edition-year-modal"> </span></p>
+                        <p class='fw-lighter'>Disponible para: <span class="fw-bold" style="color:#07ab49;" id="disponibility-modal"> </span></p>
+                        <p class='fw-lighter'>Precio: <span class="fw-bold" style="color:#07ab49;" id="price-modal"> </span></p>
+                        <p class='fw-lighter'>Cantidad disponible: <span class="fw-normal" id="status-modal"> </span></p>
+                        
+
+                    </div>
+
                 </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+
             </div>
         </div>
     </div>
-
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>

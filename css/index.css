@@ -103,18 +103,22 @@ h2, h5 {
     padding: 0;
     margin: 10px 20px;
 }
-.card-info > p{
-    margin:  2px 0;
+
+.card-info>p {
+    margin: 2px 0;
 }
+
 .card-img-top {
     text-align: center;
     width: 160px;
     height: 220px;
-    margin: 0 auto;
+    margin: 7px auto;
 }
-.card-info > h5{
+
+.card-info>h5 {
     margin: 0;
 }
+
 .btn-get-book {
     background-color: #054082;
     color: white;
@@ -178,7 +182,6 @@ a:hover {
 .search {
     width: 100%;
     position: relative;
-  
 }
 
 .search input {
@@ -235,4 +238,20 @@ a:hover {
 
 .collapse h5 {
     color: #054082
+}
+
+#img-modal {
+    width: 200px;
+    height: 350px;
+    margin: 0 auto;
+}
+
+.right-modal-side {
+    padding: 10px;
+}
+
+.right-modal-side>p {
+    text-align: justify;
+    margin-bottom: 8px;
+    word-break: break-all;
 }
