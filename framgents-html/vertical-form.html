@@ -8,11 +8,12 @@
             <!-- <i class="bi bi-arrow-bar-left"></i> -->
     </div>
     <div class="p-3 vertical-page-body">
-        <form id="form">
+        <form id="form" action="#">
             <div class="mt-3  ">
                 <label for="foto" class="form-label">Foto</label>
-                <img class="mb-2" id="preview-foto" src="" alt="previe-foto" style="display: block; width: 150px; height: 150px;">
-                <input class="form-control" type="file" id="foto" name="foto" onchange="previewFile()">
+                <img class="mb-2" id="preview-foto" src="" alt="previe-foto"
+                    style="display: block; width: 150px; height: 150px;">
+                <input class="form-control " type="file" id="foto" name="foto" onchange="previewFile()" accept="image/*">
             </div>
             <div class="mb-3">
                 <div class="row align-items-start mt-2 ">
@@ -20,14 +21,14 @@
 
                         <label for="categoria_libro" class="form-label">Categorias</label>
                         <select name="categoria_libro" id="categoria_libro" class="form-select"
-                            aria-label=".form-select-sm example">
+                            aria-label=".form-select-sm example" required>
                         </select>
                     </div>
                     <div class="col">
                         <label for="editorial_libro" class="form-label">Editoriales</label>
                         <select name="editorial_libro" id="editorial_libro" class="form-select"
-                            aria-label=".form-select-sm example">
-                            
+                            aria-label=".form-select-sm example " required>
+
 
                         </select>
 
@@ -38,33 +39,37 @@
             </div>
             <div class="mb-2">
                 <label for="titulo" class="form-label">Titulo</label>
-                <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del libro">
+                <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo del libro"
+                    required minlength="8" maxlength="40">
             </div>
             <div class="mb-2">
                 <label for="autor" class="form-label">Autor</label>
-                <input type="text" name="autor" class="form-control" id="autor" placeholder="Autor del libro">
+                <input type="text" name="autor" class="form-control" id="autor" placeholder="Autor del libro" required
+                    minlength="8" maxlength="30">
             </div>
             <div class="mb-2">
                 <label for="idioma" class="form-label">Idioma</label>
-                <input type="text" class="form-control" name="idioma" id="idioma" placeholder="Lenguaje del libro">
+                <input type="text" class="form-control" name="idioma" id="idioma" placeholder="Lenguaje del libro"
+                    required minlength="4" maxlength="20">
             </div>
 
             <div class="mb-2">
                 <label for=dDescripcion" class="form-label">Descripcion</label>
-                <textarea name="descripcion" class="form-control" placeholder="Redacta una pequeña descripcion aquí"
-                    id="descripcion"></textarea>
+                <textarea required name="descripcion" class="form-control"
+                    placeholder="Redacta una pequeña descripcion aquí" id="descripcion" minlength="50"
+                    maxlength="300"></textarea>
             </div>
 
             <div class="row align-items-start">
                 <div class="col">
                     <label for="numero_paginas" class="form-label mr-4 ">N. páginas</label>
                     <input name="numero_paginas" id="numero_paginas" type="text" class="form-control"
-                        placeholder="número de paginas" aria-label="Username">
+                        placeholder="número de paginas" aria-label="Username " required pattern="[0-9]+">
                 </div>
                 <div class="col">
                     <label for="anio_edicion" class="form-label mr-4 ">Año edi.</label>
                     <input name="anio_edicion" id="anio_edicion" type="text" class="form-control"
-                        placeholder="Año de edicion" aria-label="Username">
+                        placeholder="Año de edicion" aria-label="Username" required pattern="[0-9]+">
                 </div>
 
             </div>
@@ -72,12 +77,12 @@
                 <div class="col">
                     <label for="cantidad_libros" class="form-label mr-4 ">Cantidad libros.</label>
                     <input name="cantidad_libros" id="cantidad_libros" type="text" class="form-control"
-                        placeholder="Cantidad libros" aria-label="Username">
+                        placeholder="Cantidad libros" aria-label="Username" required pattern="[0-9]+">
                 </div>
                 <div class="col">
                     <label for="precio" class="form-label mr-4 ">Precio</label>
                     <input name="precio" id="precio" type="text" class="form-control" placeholder="Precio "
-                        aria-label="Username">
+                        aria-label="Username" required pattern='^\d+(?:\.\d{0,2})$'>
                 </div>
             </div>
 
@@ -86,14 +91,14 @@
                     <label for="disponibilidad" class="form-label mr-4 ">Disponible para</label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="disponible" id="disponibilidad1"
-                            value="Préstamo">
+                            value="Préstamo" required>
                         <label class="form-check-label" for="disponibilidad1">
                             Préstamo
                         </label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="disponible" id="disponibilidad2"
-                            value="Intercambio">
+                            value="Intercambio" required>
                         <label class="form-check-label" for="disponibilidad2">
                             Intercambio
                         </label>
@@ -103,13 +108,15 @@
                 <div class="col">
                     <label for="estatus" class="form-label mr-4 ">Estatus </label>
                     <div class="form-check">
-                        <input required class="form-check-input" type="radio" name="estatus" id="estatus1" value="Activo">
+                        <input required class="form-check-input" type="radio" name="estatus" id="estatus1"
+                            value="Activo" required>
                         <label class="form-check-label" for="estatus1">
                             Activo
                         </label>
                     </div>
                     <div class="form-check">
-                        <input required class="form-check-input" type="radio" name="estatus" id="estatus2" value="Inactivo">
+                        <input required class="form-check-input" type="radio" name="estatus" id="estatus2"
+                            value="Inactivo" required>
                         <label class="form-check-label" for="estatus2">
                             Inactivo
                         </label>
@@ -117,18 +124,18 @@
                 </div>
 
             </div>
-           
+
 
             <div class="row align-items-start mt-4 " style="text-align: center;">
                 <div class="col">
-                    <button type="button" onclick="updateBook()" class="btn btn-primary">Update</button>
-                     
+                    <button type="submit" class="btn btn-primary">Update</button>
+
                 </div>
                 <div class="col">
                     <button type="button" onclick="animationFormOff()" class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
-           
+
         </form>
     </div>
 </div>

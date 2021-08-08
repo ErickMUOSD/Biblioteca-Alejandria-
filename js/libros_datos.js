@@ -1,15 +1,51 @@
-let idBookGlobal, idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost;
+let idBookGlobal, idEditorialGlobal, idCategoryPost, idEditorialPost, chooseFilePost, srcIMageGlobal;
 //call function to fill table
 loadData();
 // call event on click in any row in the table
+
+$(function () {
+    $('#form').on('submit', function (e) {
+        let img, imgName;
+        e.preventDefault();
+        img = srcIMageGlobal;
+        console.log(img)
+        if(img == null){
+            img = 'ignorethisokeydasdsa'
+        }
+        imgName = img.slice(7, img.length)
+        var form = $('#form')[0];
+        var formData = new FormData(form);
+        formData.append('id', idBookGlobal);
+        formData.append('foto_nombre', imgName)
+        $.ajax({
+            type: 'POST',
+            cache: false,
+            processData: false,  // Important!
+            contentType: false,
+            url: chooseFilePost == 1 ? 'libros_actualizar.php' : 'libros_insertar.php',
+            data: formData,
+            success: function (response) {
+                console.log("SUCCESS : " + response);
+                animationFormOff()
+            },
+            error: function (response) {
+                console.log("ERROR : " + response);
+            }
+        });
+
+    });
+});
+
 $(document).on("click", "tbody>tr", function () {
     let currentIdCategory, currentIdEditorial;
     idBookGlobal = $(this).attr('id')
     currentIdCategory = parseInt($(this).find("td:eq( 11 )").text(), 10);
     currentIdEditorial = parseInt($(this).find("td:eq( 10 )").text(), 10)
+    srcIMageGlobal =$(this).find("#image-td").attr('src')
+    
     chooseFilePost = 1
-
-
+   
+   
     getCategoryandEditorial(currentIdCategory, currentIdEditorial)
     getDataToVerticalPage(idBookGlobal);
     animationFormOn();
@@ -48,7 +84,7 @@ function loadData() {
 
         data.data.forEach(function (values) {
             $("#tbody").append("<tr id=" + values['id_libro'] +
-                " class='tr-style'> <td><img src='images/"+values['foto']+
+                " class='tr-style'> <td><img id='image-td' src='images/" + values['foto'] +
                 "' ></td>  <td class='align-middle' >" + values['titulo'] +
                 "</td> <td class='align-middle' >" + values['autor'] +
                 "</td> <td class='align-middle' >" + values['idioma'] +
@@ -77,7 +113,7 @@ function getDataToVerticalPage(id) {
         dataType: 'json',
         cache: false,
         success: function (response) {
-            $("#preview-foto").attr("src", "images/"+response.data[0].foto);
+            $("#preview-foto").attr("src", "images/" + response.data[0].foto);
             $("#titulo").val(response.data[0].titulo);
             $("#autor").val(response.data[0].autor);
             $("#idioma").val(response.data[0].idioma);
@@ -101,7 +137,7 @@ function addBook() {
     getCategoryandEditorial()
     // $(this).find("td:eq( 11 )").text()
     $("#categoria_libro").val($("#categoria_libro option:first").val());
-
+    $("#foto").attr("required", 'required');
     //pass to insercion the first id from tr
 
 }
@@ -112,30 +148,32 @@ function clearInputForm() {
         });
     $("#categoria_libro").find("option").remove()
     $("#editorial_libro").find("option").remove()
+    $("#foto").removeAttr("required");
+    srcIMageGlobal = 0;
 }
 
-function updateBook() {
+// function updateBook() {
 
-    var form = $('#form')[0];
-    var formData = new FormData(form);
-    formData.append('id',idBookGlobal);
-    $.ajax({
-        type: 'POST',
-        cache: false,
-        processData: false,  // Important!
-        contentType: false,
-        url: chooseFilePost == 1 ?'libros_actualizar.php': 'libros_insertar.php',
-        data: formData,
-        success: function (response) {
-            console.log("SUCCESS : " + response);
-            animationFormOff()
-        },
-        error: function (response) {
-            console.log("ERROR : " + response);
-        }
-    });
+//     var form = $('#form')[0];
+//     var formData = new FormData(form);
+//     formData.append('id', idBookGlobal);
+//     $.ajax({
+//         type: 'POST',
+//         cache: false,
+//         processData: false,  // Important!
+//         contentType: false,
+//         url: chooseFilePost == 1 ? 'libros_actualizar.php' : 'libros_insertar.php',
+//         data: formData,
+//         success: function (response) {
+//             console.log("SUCCESS : " + response);
+//             animationFormOff()
+//         },
+//         error: function (response) {
+//             console.log("ERROR : " + response);
+//         }
+//     });
 
-}
+// }
 function getCategoryandEditorial(currentIdCategory, currentIdEditorial) {
     let selected = '';
     $.getJSON("categorias_libro.php", { cache: false }, function (data) {
@@ -168,3 +206,4 @@ function previewFile() {
         preview.src = "";
     }
 }
+

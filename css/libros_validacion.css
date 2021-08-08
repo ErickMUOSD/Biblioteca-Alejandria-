@@ -1,0 +1,24 @@
+input:invalid {
+    border: 1px solid red;
+    background-color: rgba(243, 98, 98, 0.1);
+    /* box-shadow: 0 0 0 0.25rem rgba(243, 98, 98, 0.2); */
+}
+
+input:valid {
+    border: 1px solid rgb(20, 150, 78);
+    background-color: rgba(4, 77, 36, 0.1);
+    ;
+    /* box-shadow: 0 0 0 0.25rem rgba(4, 77, 36, 0.2); */
+}
+
+textarea:invalid {
+    border: 1px solid red;
+    background-color: rgba(243, 98, 98, 0.1);
+    /* box-shadow: 0 0 0 0.25rem rgba(243, 98, 98, 0.2); */
+}
+
+textarea:valid {
+    border: 1px solid rgb(20, 150, 78);
+    background-color: rgba(4, 77, 36, 0.1);
+    ;
+}
