@@ -1,7 +1,7 @@
 
 
 buttonsState(true);
-//setDate()
+setDate()
 
 
 function buttonsState(formEnable) {
@@ -35,6 +35,7 @@ $("form#form-user").submit(function (e) {
                 $("#alert-icon-back").css("background-color", "#3A833C")
                 $("#alert-text").css("background-color", "#4CB050")
                 $("#alert-text").text("Usuario encontrado. Llena el formulario de dirección.")
+                buttonsState(false);
             } else {
                 $("#alert").addClass("d-flex  flex-row  bd-highlight");
                 $("#alert-icon-back").css("background-color", " #970001")
@@ -47,12 +48,29 @@ $("form#form-user").submit(function (e) {
 
 
 });
+
+$(function () {
+    $('#estado').change(function () {
+        console.log($(this).val())
+        $.getJSON('municipios.php', {
+            estado_id: $(this).val()
+        }, function (data, textStatus, jqXHR) {
+            console.log(data.data);
+            var municipios = $('#municipio');
+            municipios.html('<option value="">Selecciona</option>')
+            data.data.forEach(function (v, i) {
+                // console.log(v);
+                municipios.append(new Option(v['municipio'], v['id_municipio']));
+            });
+        });
+    });
+});
 function setDate() {
     var oneMonthLater;
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var mm_1 = today.getMonth() + 1
+    var mm_1 = String(today.getMonth() + 2).padStart(2, '0');
     var yyyy = today.getFullYear();
     today = dd + '/' + mm + '/' + yyyy;
     oneMonthLater = dd + '/' + (mm_1) + '/' + yyyy;

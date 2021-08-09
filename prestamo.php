@@ -57,6 +57,20 @@
                                 <div class="col-md-4">
                                     <label for="estado" class="form-label">Estado</label>
                                     <select name="estado" id="estado" class="form-select" aria-label=".form-select-sm example" required>
+                                        <option selected value="">Selecciona</option>
+                                        <?php
+
+                                        require_once './conexion.php';
+                                        $sql = 'select id_estado, estado from estados order by estado asc';
+                                        $selectFirst = 1;
+                                        foreach ($conexion->query($sql, PDO::FETCH_ASSOC) as $row) {
+                                            $selected = ($selectFirst == 1 ? 'selected' : '');
+                                            echo <<<fin
+                                <option value="{$row['id_estado']}" {$selected}>{$row['estado']}</option>
+fin;
+                                            $selectFirst=0;
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
