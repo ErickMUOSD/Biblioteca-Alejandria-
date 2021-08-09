@@ -17,7 +17,6 @@ require_once './checar_sesion.php';
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script defer src="js/bootstrap.min.js"></script>
-    <script src="js/jquery-3.6.0.min.js"> </script>
 
 
     <title>Libros</title>
@@ -52,7 +51,7 @@ require_once './checar_sesion.php';
                         <tr>
                             <th class="align-middle" scope="col">Foto</th>
                             <th class="align-middle" scope="col">Titulo</th>
-                            <th class="align-middle" scope="col">Autor</th>
+                            <th class="align-middle"  scope="col">Autor</th>
                             <th class="align-middle" scope="col">Idioma</th>
                             <th class="align-middle" scope="col">Descripcion</th>
                             <th class="align-middle" scope="col">N. páginas</th>
@@ -71,8 +70,10 @@ require_once './checar_sesion.php';
             </div>
         </div>
     </div>
-
+    <script src="js/jquery-3.6.0.min.js"> </script>
     <script src="js/libros_datos.js"></script>
+
 </body>
+
 
 </html>

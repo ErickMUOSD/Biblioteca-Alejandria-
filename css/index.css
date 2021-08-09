@@ -49,7 +49,7 @@ h2, h5 {
     font-size: 40px;
     letter-spacing: -1px;
     word-spacing: -1px;
-    color: #054082;
+    color: #0762c9;
     font-weight: 400;
     text-decoration: none solid rgb(68, 68, 68);
     font-style: normal;
@@ -59,7 +59,7 @@ h2, h5 {
 
 .title-btn {
     box-shadow: 0px 2px 13px -1px #053f82;
-    background-color: #053f82;
+    background-color: #0762c9;
     border-radius: 25px;
     display: inline-block;
     cursor: pointer;
@@ -120,7 +120,7 @@ h2, h5 {
 }
 
 .btn-get-book {
-    background-color: #054082;
+    background-color: #0762c9;
     color: white;
     display: block;
     margin: 5px 0;
@@ -222,13 +222,13 @@ a:hover {
 }
 
 .advanced-settings i {
-    color: #054082;
+    color: #0762c9;
     margin-right: 5px;
 }
 
 .advanced-settings a {
     font-weight: 500;
-    color: #054082;
+    color: #0762c9;
     margin-right: 5px;
 }
 

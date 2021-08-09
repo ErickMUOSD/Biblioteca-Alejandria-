@@ -101,7 +101,7 @@
                 $modalInfo = ", data-bs-title ='{$libros['titulo']}', data-bs-book-autor ='{$libros['autor']}' , data-bs-book-lenguaje ='{$libros['idioma']}' , 
                     data-bs-book-description ='{$libros['descripcion']}' , data-bs-book-numero_paginas='{$libros['numero_paginas']}' , data-bs-book-year-edition ='{$libros['anio_edicion']}' ,
                     data-bs-book-img ='{$libros['foto']}' , data-bs-book-disponibility ='{$libros['disponible_para']}' , data-bs-book-price ='{$libros['precio']}' , 
-                    data-bs-book-cant ='{$libros['cantidad_libros']}' , data-bs-book-status ='{$libros['estatus_libro']}'";
+                    data-bs-book-cant ='{$libros['cantidad_libros']}' , data-bs-book-status ='{$libros['estatus_libro']}' , data-bs-book-id-libro='{$libros['id_libro']}'";
                 if (empty($segment->get('id_usuario')) || !is_numeric($segment->get('id_usuario')) || 'Administrador' != $segment->get('privilegio')) {
                     $titleBtn = 'Más informacion';
                     $launchModal = ' data-bs-toggle="modal" data-bs-target="#exampleModal" ';
@@ -110,7 +110,9 @@
                 } else {
                     $launchModal = '';
                     $titleBtn = 'Llevarme este libro';
-                    $directionFile = ($libros['disponible_para'] == 'Préstamo') ? 'prestamo_realizar.php' : 'intercambio_realizar.php';
+                    $directionFile = ($libros['disponible_para'] == 'Préstamo')
+                     ? "prestamo.php?"."id_libro={$libros['id_libro']}"."&foto={$libros['foto']}"."&titulo={$libros['titulo']}"."&autor={$libros['autor']}"."&precio={$libros['precio']}"
+                     : 'intercambio_realizar.php';
                 }
 
                 echo <<<fin
@@ -132,6 +134,7 @@
             </div>
         fin;
             }
+          
         } else if (isset($_POST['enviar'])) {
             require_once './conexion.php';
             if ($_POST['buscar_por'] != 'editorial') {

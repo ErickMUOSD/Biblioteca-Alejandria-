@@ -87,8 +87,8 @@ function loadData() {
                 " class='tr-style'> <td><img id='image-td' src='images/" + values['foto'] +
                 "' ></td>  <td class='align-middle' >" + values['titulo'] +
                 "</td> <td class='align-middle' >" + values['autor'] +
-                "</td> <td class='align-middle' >" + values['idioma'] +
-                "</td> <td class='align-middle'>" + values['descripcion'] +
+                "</td> <td class='align-middle'   >" + values['idioma'] +
+                "</td> <td class='align-middle' style='word-break: break-word;'>" + values['descripcion'] +
                 "</td> <td class='align-middle' >" + values['numero_paginas'] +
                 "</td>  <td class='align-middle'>" + values['anio_edicion'] +
                 "</td> <td class='align-middle'>" + values['disponible_para'] +

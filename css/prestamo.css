@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F2F7FF;
+    ;
+}
+
+.card {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.btn-secondary-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #0762c9;
+    border-color: #0762c9;
+}
+
+p{
+    margin: 0;
+    padding-bottom: 5px
+}
+.btn-primary-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0762c9;
+    color: white;
+}
+img{
+    width: 140px;
+
+}
