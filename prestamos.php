@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/editoriales.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="js/bootstrap.min.js"></script>
     <title>Editoriales</title>
 </head>
-<body>
+<body style="background-color: #F2F7FF;">
 <?php
     require_once('./framgents-html/navegacion_admin.html');
 
@@ -23,24 +24,23 @@
             <div class='col-3'></div>
             <div class='col-13'>
                     <div class='card'>
-                        <div class='card-header'>
+                        <div class='card-header fs-3'>
                         <i class="bi bi-book-half"></i>Prestamos
                         </div>
                         <div class='card-body'>
-                            <table class="table table-striped table-hover">
+                            <table class="table ">
                             <thead>
                                 <tr>
-                                    <th style="width=80%;">Id prestamo</th>
-                                    <th style="width=80%;">Titulo</th>
-                                    <th style="width=80%;">Nombre</th>
-                                    <th style="width=80%;">Primer Apellido</th>
-                                    <th style="width=80%;">Numero Celular</th>
-                                    <th style="width=80%;">Cantidad de libros</th>
-                                    <th style="width=80%;">Salida</th>
-                                    <th style="width=80%;">Vencimiento</th>
-                                    <th style="width=80%;">Estado</th>
-                                    <th style="width=20%;">&nbsp;</th>
-                                    <th style="width=20%;">&nbsp;</th>
+                                    <th >Id prestamo</th>
+                                    <th>Titulo</th>
+                                    <th>Nombre</th>
+                                    <th >Primer Apellido</th>
+                                    <th >Numero Celular</th>
+                                    <th >Cantidad de libros</th>
+                                    <th ">Salida</th>
+                                    <th >Vencimiento</th>
+                                    <th >Estado</th>
+                                   
                                 </tr>
                             </thead>
                             <tbody>
