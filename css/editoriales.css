@@ -1,0 +1,10 @@
+.float-end{
+    background-color: #0762c9;;
+    color: whitesmoke;
+}
+
+tbody>tr:hover{
+      background-color: #054082;
+      color: white;
+      opacity: 0.8;
+}
