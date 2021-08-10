@@ -23,11 +23,13 @@
                         <h2 style="color:#0762c9">Datos del usuario</h2>
                         <h5>Buscar usuario </h5>
                         <div id="alert" class="  mt-2 mb-2" style="  display: none; ">
-                            <i id="alert-icon-back" class="bi bi-x-lg" style="color: white; padding:  10px ;"></i>
+                            <i id="alert-icon-back" class="" style="color: white; padding:  10px ;"></i>
                             <h5 id="alert-text" style="color: white; padding: 10px; margin: 0"> </h5>
                         </div>
 
                         <form id="form-user" class="row g-3" action="#">
+                          
+
                             <div class="col-md-4">
                                 <label for="nombre" class="form-label">Nombre</label>
                                 <input placeholder="Nombre del usuario" type="text" name="nombre" id="nombre" class="form-control" required maxlength="30" minlength="5">
@@ -68,7 +70,7 @@
                                             echo <<<fin
                                 <option value="{$row['id_estado']}" {$selected}>{$row['estado']}</option>
 fin;
-                                            $selectFirst=0;
+                                            $selectFirst = 0;
                                         }
                                         ?>
                                     </select>
@@ -83,34 +85,34 @@ fin;
 
                             <div class="col-md-3">
                                 <label for="calle" class="form-label">Calle</label>
-                                <input name="calle" type="text" class="form-control" id="calle" required>
+                                <input placeholder="Nombre de la calle" name="calle" type="text" class="form-control" id="calle" required>
                             </div>
                             <div class="col-md-3">
                                 <label for="numero_exterior" class="form-label">Número exterior</label>
-                                <input name="numero_exterior" type="text" class="form-control" id="numero_exterior" required>
+                                <input placeholder="Ej: 120" name="numero_exterior" type="text" class="form-control" id="numero_exterior" required>
                             </div>
                             <div class="col-md-3">
                                 <label for="numero_interior" class="form-label">Número interior</label>
-                                <input name="numero_interior" type="text" class="form-control" id="numero_interior" required>
+                                <input name="numero_interior" placeholder="Ej: 120 o S/N" type="text" class="form-control" id="numero_interior" required data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
                             </div>
 
                             <div class="col-md-3">
                                 <label for="codigo_postal" class="form-label">Código Postal</label>
-                                <input name="codigo_postal" type="text" class="form-control" id="codigo_postal" required>
+                                <input placeholder="Ej: 52080" name="codigo_postal" type="text" class="form-control" id="codigo_postal" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="colonia" class="form-label">Colonia</label>
-                                <input name="colonia" type="text" class="form-control" id="colonia  required">
+                                <input placeholder="Ej: Atarasquillo" name="colonia" type="text" class="form-control" id="colonia  required">
                             </div>
                             <div class="col-md-4">
                                 <label for="ciudad" class="form-label">Ciudad</label>
-                                <input name="ciudad" type="text" class="form-control" id="ciudad" requirede>
+                                <input placeholder="Ej: Toluca" name="ciudad" type="text" class="form-control" id="ciudad" requirede>
                             </div>
-                            <div class="col-12">
+                            <!-- <div class="col-12">
                                 <button type="submit" class=" btn btn-secondary-form "> <span class="material-icons">
                                         post_add
                                     </span>Agregar</button>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
 
@@ -136,6 +138,7 @@ fin;
 
 
                                 <h5>Información del libro </h5>
+                                <p class='fw-lighter'> Titulo: <span class="fw-normal" id="id-book"> <?php echo "{$_GET['id_libro']}"; ?></span></p>
                                 <p class='fw-lighter'> Titulo: <span class="fw-normal" id="avaliable-modal"> <?php echo "{$_GET['titulo']}"; ?></span></p>
                                 <p class='fw-lighter'> Autor: <span class="fw-normal" id="avaliable-modal"> <?php echo "{$_GET['autor']}"; ?></span></p>
                                 <p class='fw-lighter'> Cantidad: <span class="fw-normal" id="avaliable-modal">1 </span></p>
@@ -155,13 +158,13 @@ fin;
                             <h5>Información de la compra</h5>
                             <p class='fw-lighter'> Fecha de salida: <span class="fw-normal" id="current-date"> 08/08/21</span></p>
                             <p class='fw-lighter'> Fecha de regreso: <span class="fw-normal" id="date-one-month"> 08/09/21</span></p>
-                            <p class='fw-lighter'> Precio del libro: <span class="fw-normal" id="avaliable-modal"> <?php echo "{$_GET['precio']}"; ?> </span></p>
-                            <p class='fw-lighter'> Precio x día: <span class="fw-normal" id="avaliable-modal"> 5 pesos</span></p>
-                            <p class='fw-lighter'> Total: <span class="fw-normal" id="avaliable-modal"></span></p>
+                            <p class='fw-lighter'> Precio del libro: <span class="fw-normal" id="precio"> <?php echo "{$_GET['precio']}"; ?> </span></p>
+                            <p class='fw-lighter'> Precio x día: <span class="fw-normal" id="precio-x-dia"></span></p>
+                            <p class='fw-lighter'> Total: <span class="fw-normal" id="total"></span></p>
 
-                            <button type="submit" class=" btn btn-primary-form "> <span class="material-icons">
+                            <button type="submit" id="btn-prestamo" class=" btn btn-primary-form "> <span class="material-icons">
                                     shopping_bag
-                                </span>Realizar compra</button>
+                                </span>Realizar prestamo</button>
 
                         </div>
                     </div>
