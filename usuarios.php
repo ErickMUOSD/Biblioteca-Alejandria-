@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/editoriales.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="js/bootstrap.min.js"></script>
@@ -23,25 +24,24 @@
             <div class='col-3'></div>
             <div class='col-11'>
                     <div class='card'>
-                        <div class='card-header'>
-                        <i class="bi bi-people-fill"></i>Usuarios
+                        <div class='card-header fs-3'>
+                        <i class= " bi bi-people-fill"></i>Usuarios
                         </div>
                         <div class='card-body'>
-                            <a class="float-end btn btn-primary btn-sm" href="usuarios_crear.php" title="Crear usuario">
+                            <a class="float-end btn btn-lg " href="usuarios_crear.php" title="Crear usuario">
                              <i class="bi bi-person-plus-fill"></i> Crear
                             </a>
-                            <table class="table table-striped table-hover">
+                            <table class="table">
                             <thead>
                                 <tr>
-                                    <th style="width=80%;">Nombre(s)</th>
-                                    <th style="width=80%;">Primer Apellido</th>
-                                    <th style="width=80%;">Segundo Apellido</th>
-                                    <th style="width=80%;">Correo</th>
-                                    <th style="width=80%;">Telefono</th>
-                                    <th style="width=80%;">Estatus</th>
-                                    <th style="width=80%;">Privilegio</th>
-                                    <th style="width=20%;">&nbsp;</th>
-                                    <th style="width=20%;">&nbsp;</th>
+                                    <th>Nombre(s)</th>
+                                    <th >Primer Apellido</th>
+                                    <th >Segundo Apellido</th>
+                                    <th >Correo</th>
+                                    <th >Telefono</th>
+                                    <th >Estatus</th>
+                                    <th >Privilegio</th>
+                                    <th >&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,7 +64,7 @@
                                     <td>{$usuario['estatus_usuario']}</td>
                                     <td>{$usuario['privilegio']}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="usuarios_editar.php?id_usuario={$usuario['id_usuario']}" title="Clic para editar usuario">
+                                        <a class="btn float-end enviar btn-sm" href="usuarios_editar.php?id_usuario={$usuario['id_usuario']}" title="Clic para editar usuario">
                                             <i class="bi-pencil-square"></i> Editar
                                         </a>
                                     </td>

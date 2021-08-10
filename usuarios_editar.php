@@ -24,6 +24,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_usuario']) && is_nume
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/editoriales_crear.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="js/bootstrap.min.js"></script>
@@ -40,7 +41,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_usuario']) && is_nume
         <div class='col-3'></div>
         <div class='col-6'>
             <div class="card">
-                <div class="card-header">
+                <div class="card-header   fs-5">
                     <i class="bi bi-book-half"></i>Editar Usuario
                 </div>
                 <div class="card-body">
@@ -132,8 +133,8 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_usuario']) && is_nume
                                     </div>
                                 </div>
                             </div>
-                        <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
-                        <a href="editoriales.php" class="btn btn-secondary btn-sm">Cancelar</a>
+                        <button type="submit" class="btn enviar btn-sm">Enviar</button>
+                        <a href="editoriales.php" class="btn cancelar btn-sm">Cancelar</a>
                         </form>  
                         <?php
                     }else {
@@ -161,8 +162,8 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_usuario']) && is_nume
                             $sentencia->bindValue(':privilegio', $_POST['privilegio'], PDO::PARAM_INT);
                             $sentencia ->bindValue(':id_usuario', $_GET["id_usuario"],PDO::PARAM_INT);
                             $sentencia->execute(); 
-                            echo '<h6>Usuario Actualizada</h6>';
-                            echo '<div><a href="usuarios.php" class="btn btn-secondary btn-sm">Usuarios</a></div>';
+                            echo '<h6   >Usuario Actualizada</h6>';
+                            echo '<div><a href="usuarios.php" class="btn enviar btn-sm">Usuarios</a></div>';
                 }
                     ?>  
                   </div>
