@@ -1,0 +1,23 @@
+body{
+    background-color: #F2F7FF;
+}
+.card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: none;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.enviar{
+   background-color:  #0762c9;
+   color: white;
+}
+.cancelar{
+    background-color: rgba(243, 98, 98, 0.1);
+    border: 1px solid red;
+    
+}

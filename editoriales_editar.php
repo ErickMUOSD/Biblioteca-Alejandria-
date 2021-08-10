@@ -23,6 +23,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/editoriales_crear.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="js/bootstrap.min.js"></script>
@@ -67,8 +68,8 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_editorial']) && is_nu
                                 aria-describedby="nombre_editorialHelp" value="<?php echo $_POST['nombre_editorial'] ?? '' ?>">
                             <div id="nombre_editorialHelp" class="invalid-feedback"><?php echo isset($errors) && $errors->first('nombre_editorial') ?></div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
-                        <a href="editoriales.php" class="btn btn-secondary btn-sm">Cancelar</a>
+                        <button type="submit" class="btn enviar btn-sm">Enviar</button>
+                        <a href="editoriales.php" class="btn cancelar btn-sm">Cancelar</a>
                         </form>  
                         <?php
                     }else {

@@ -21,7 +21,8 @@
     ?>
 
     <!-- Tabla de editoriales -->
-    <div class='container mt-3'>
+    <div class=' container  mt-3'>
+
         <div class='row'>
             <div class='col-3'></div>
             <div class='col-12'>
@@ -39,7 +40,7 @@
                                     <th>Editoriales</th>
                                     <th>Estatus</th>
                                     <th>&nbsp;</th>
-                                   
+
 
                                 </tr>
                             </thead>
