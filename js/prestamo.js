@@ -1,5 +1,5 @@
 
-let idUserGlobal, totalGlobal, idBook;
+let idUserGlobal, totalGlobal, idBook, cantBooks;
 buttonsState(true);
 setDate()
 
@@ -84,7 +84,8 @@ $("#btn-prestamo").click(function () {
     formData.append('id_usuario', idUserGlobal);
     formData.append('total', totalGlobal)
     formData.append('id_libro', $('#id-book').text())
-    console.log(idUserGlobal)
+    formData.append('cantidad_libro', $('#cant-modal').text())
+
 
     $.ajax({
         type: 'POST',
@@ -126,9 +127,9 @@ function calculatePrice() {
         $('#precio-x-dia').text(precioXDia)
         $('#total').text(total)
         totalGlobal = total;
-
+   
     }, 2000)
-
+   
 }
 
 // $("#numero_interior").hover(function(){

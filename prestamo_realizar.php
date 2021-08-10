@@ -45,13 +45,22 @@ $sentencia = $conexion->prepare($sql);
 $sentencia->bindValue(':id_libro', $_POST['id_libro'], PDO::PARAM_INT);
 $sentencia->bindValue(':id_prestamo', $prestamo_id, PDO::PARAM_INT);
 $sentencia->execute();
+if($_POST['cantidad_libro']==1){
+    $sql = "
+    update libros set cantidad_libros = (cantidad_libros-1), estatus_libro= 'Inactivo' where id_libro = :id_libro
+    ";
+    $sentencia = $conexion->prepare($sql);
+    $sentencia->bindValue(':id_libro', $_POST['id_libro'], PDO::PARAM_INT);
+    $sentencia->execute();
+}else{
+    $sql = "
+    update libros set cantidad_libros = (cantidad_libros-1) where id_libro = :id_libro
+    ";
+    $sentencia = $conexion->prepare($sql);
+    $sentencia->bindValue(':id_libro', $_POST['id_libro'], PDO::PARAM_INT);
+    $sentencia->execute();
+}
 
-$sql = "
-update libros set cantidad_libros = (cantidad_libros-1) where id_libro = :id_libro
-";
-$sentencia = $conexion->prepare($sql);
-$sentencia->bindValue(':id_libro', $_POST['id_libro'], PDO::PARAM_INT);
-$sentencia->execute();
 
 /*
 1.- si hay 0 descativvar

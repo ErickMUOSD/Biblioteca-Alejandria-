@@ -141,9 +141,9 @@ fin;
                                 <p class='fw-lighter'> Titulo: <span class="fw-normal" id="id-book"> <?php echo "{$_GET['id_libro']}"; ?></span></p>
                                 <p class='fw-lighter'> Titulo: <span class="fw-normal" id="avaliable-modal"> <?php echo "{$_GET['titulo']}"; ?></span></p>
                                 <p class='fw-lighter'> Autor: <span class="fw-normal" id="avaliable-modal"> <?php echo "{$_GET['autor']}"; ?></span></p>
-                                <p class='fw-lighter'> Cantidad: <span class="fw-normal" id="avaliable-modal">1 </span></p>
+                                <p class='fw-lighter'> Total a llevar: <span class="fw-normal" id="avaliable-modal">1 </span></p>
                                 <p class='fw-lighter'>Precio: $<span class="fw-bold" style="color:#07ab49;" id="price-modal"> <?php echo "{$_GET['precio']}"; ?> </span></p>
-
+                                <p class='fw-lighter' >Cantidad de libros: <span class="fw-bold"  id="cant-modal"> <?php echo "{$_GET['cantidad_libro']}"; ?> </span></p>
                             </div>
                         </div>
 
@@ -156,11 +156,11 @@ fin;
                         <div class="row g-1 ">
                             <h2 style="color:#0762c9">Ticket</h2>
                             <h5>Información de la compra</h5>
-                            <p class='fw-lighter'> Fecha de salida: <span class="fw-normal" id="current-date"> 08/08/21</span></p>
-                            <p class='fw-lighter'> Fecha de regreso: <span class="fw-normal" id="date-one-month"> 08/09/21</span></p>
-                            <p class='fw-lighter'> Precio del libro: <span class="fw-normal" id="precio"> <?php echo "{$_GET['precio']}"; ?> </span></p>
-                            <p class='fw-lighter'> Precio x día: <span class="fw-normal" id="precio-x-dia"></span></p>
-                            <p class='fw-lighter'> Total: <span class="fw-normal" id="total"></span></p>
+                            <p class='fw-lighter'> Fecha de salida: <span class="fw-bold" id="current-date"> 08/08/21</span></p>
+                            <p class='fw-lighter'> Fecha de regreso: <span class="fw-bold" id="date-one-month"> 08/09/21</span></p>
+                            <p class='fw-lighter'> Precio del libro: <span class="fw-bold" id="precio"> <?php echo "{$_GET['precio']}"; ?> </span></p>
+                            <p class='fw-lighter'> Precio x día: $<span class="fw-bold" id="precio-x-dia"></span></p>
+                            <p class='fw-lighter'> Total: $<span class="fw-bold" id="total"></span></p>
 
                             <button type="submit" id="btn-prestamo" class=" btn btn-primary-form "> <span class="material-icons">
                                     shopping_bag

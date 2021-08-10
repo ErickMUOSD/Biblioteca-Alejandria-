@@ -93,7 +93,7 @@ function loadData() {
                 "</td>  <td class='align-middle'>" + values['anio_edicion'] +
                 "</td> <td class='align-middle'>" + values['disponible_para'] +
                 "</td>  <td class='align-middle' >" + values['precio'] +
-                "</td>  <td class='align-middle' >" + values['cantidad_libros'] +
+                "</td>  <td class='align-middle' style= 'color: red; font-weight:bold' >" + values['estatus_libro'] +
                 "</td> <td class='hidden-id' name='hidden-editorial' id='id_editorial'>" + values['id_editorial'] + " </td> " +
                 "</td> <td class='hidden-id' id='id_categoria'>" + values['id_categoria'] + " </td> " +
                 "</tr> ");

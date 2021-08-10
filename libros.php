@@ -58,7 +58,7 @@ require_once './checar_sesion.php';
                             <th class="align-middle" scope="col">Año de edicion</th>
                             <th class="align-middle" scope="col">Disponible para</th>
                             <th class="align-middle" scope="col">Precio</th>
-                            <th class="align-middle" scope="col">Cantidad</th>
+                            <th class="align-middle" scope="col">Estatus</th>
 
 
                         </tr>
