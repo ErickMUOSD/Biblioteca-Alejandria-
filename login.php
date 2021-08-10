@@ -60,7 +60,7 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo']) && isset($_P
 <body>
     <div class="container-fluid ">
 
-        <div class="card mt-2">
+        <div class="card mt-4">
             <div class="card-body  d-flex flex-row ">
                 <div class="left-side ">
                     <img class="" src="images_system/libreria3.png" alt="mujer leyendo">

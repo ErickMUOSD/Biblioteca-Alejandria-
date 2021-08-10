@@ -9,7 +9,8 @@ body {
 
 
 .card {
-    margin: 10px;
+    background-color:white ;
+    margin: 20px;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -23,11 +24,11 @@ body {
 }
 
 a:active {
-    color: #054082;
+    color: #0762c9;
 }
 
 a:visited {
-    color: #054082;
+    color: #0762c9;
     ;
 }
 
@@ -41,6 +42,7 @@ img {
 }
 
 .left-side {
+    margin:  0 20px;
     text-align: center;
     width: 45%;
 }
@@ -65,7 +67,7 @@ input {
 }
 
 .submit-btn {
-    background-color: #054082;
+    background-color: #0762c9;
     color: white;
     height: 45px;
     width: 90%;
