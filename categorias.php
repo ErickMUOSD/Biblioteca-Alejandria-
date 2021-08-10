@@ -28,7 +28,7 @@
 
     <!-- Tabla -->
     <div class="container mt-3">
-        <div class='card'>
+        <div class='card shadow'>
             <div class='card-header fs-3'>
                 <i class=" bi bi-people-fill"></i>Categorías
             </div>

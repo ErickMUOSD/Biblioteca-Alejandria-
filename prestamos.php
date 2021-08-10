@@ -23,7 +23,7 @@
         <div class='row'>
             <div class='col-3'></div>
             <div class='col-13'>
-                    <div class='card'>
+                    <div class='card shadow'>
                         <div class='card-header fs-3'>
                         <i class="bi bi-book-half"></i>Prestamos
                         </div>

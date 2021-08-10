@@ -26,7 +26,7 @@
         <div class='row'>
             <div class='col-3'></div>
             <div class='col-12'>
-                <div class='card'>
+                <div class='card shadow'>
                     <div class='card-header fs-3'>
                         <i class=" fs-3 bi bi-book-half"></i> Editoriales
                     </div>
