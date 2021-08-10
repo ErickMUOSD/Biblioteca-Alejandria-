@@ -22,10 +22,11 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/nav-bar.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/editoriales_crear.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <script defer src="js/bootstrap.min.js"></script>
+   
     <title>Editar Categoria</title>
 </head>
 <body>
@@ -39,7 +40,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
         <div class='col-6'>
             <div class="card">
                 <div class="card-header">
-                    <i class="bi bi-book-half"></i>Editar Categoria
+                    <i class="bi  bi-book-half"></i>Editar Categoria
                 </div>
                 <div class="card-body">
                   <?php
@@ -66,8 +67,8 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
                                 aria-describedby="nombre_categoriaHelp" value="<?php echo $_POST['nombre_categoria'] ?? '' ?>">
                             <div id="nombre_categoriaHelp" class="invalid-feedback"><?php echo isset($errors) && $errors->first('nombre_categoria') ?></div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
-                        <a href="categorias.php" class="btn btn-secondary btn-sm">Cancelar</a>
+                        <button type="submit" class="btn enviar btn-sm">Enviar</button>
+                        <a href="categorias.php" class="btn cancelar btn-sm">Cancelar</a>
                         </form>  
                         <?php
                     }else {
@@ -80,7 +81,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
                             $sentencia ->bindValue(':id_categoria', $_GET ["id_categoria"],PDO::PARAM_INT);
                             $sentencia ->execute();    
                             echo '<h6>Categoria Actualizada</h6>';
-                            echo '<div><a href="categorias.php" class="btn btn-secondary btn-sm">Categorias</a></div>';
+                            echo '<div><a href="categorias.php" class="btn enviar btn-sm">Categorias</a></div>';
                         
                     }
                   ?>  
@@ -90,6 +91,7 @@ if ('GET' == $_SERVER['REQUEST_METHOD'] && isset($_GET['id_categoria']) && is_nu
         <div class="col-3"></div>
     </div>
 </div>    
+<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.6.0.min.js"></script> 
 </body>
 </html>

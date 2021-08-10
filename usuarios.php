@@ -25,7 +25,7 @@
             <div class='col-11'>
                     <div class='card'>
                         <div class='card-header fs-3'>
-                        <i class= " bi bi-people-fill"></i>Usuarios
+                        <i class= "  fs-3 bi bi-people-fill"></i>Usuarios
                         </div>
                         <div class='card-body'>
                             <a class="float-end btn btn-lg " href="usuarios_crear.php" title="Crear usuario">
