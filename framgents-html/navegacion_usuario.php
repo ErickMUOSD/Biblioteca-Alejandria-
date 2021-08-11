@@ -42,7 +42,7 @@
 
                 echo '<ul class="navbar-nav ">
                 <li class="nav-item  ">
-             <a class="nav-link " aria-current="page" href=""><span class="material-icons">
+             <a class="nav-link " aria-current="page" href="mi_perfil.php"><span class="material-icons">
                      perm_identity
                  </span>Mi perfil</a>
          </li>
