@@ -1,4 +1,8 @@
 <?php
+require_once './checar_sesion.php';
+
+?>
+<?php
 require('vendor/autoload.php');
 
 use Rakit\Validation\Validator;
