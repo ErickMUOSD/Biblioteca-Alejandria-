@@ -112,7 +112,7 @@ require_once './checar_sesion.php';
                             <div class="col-md-5">
                                 <label for="foto" class="form-label">Foto</label>
 
-                                <input class="form-control " type="file" id="foto" name="foto" onchange="previewFile()" accept="image/*">
+                                <input class="form-control " type="file" id="foto" name="foto"  accept="image/*">
                             </div>
                             <div class="col-md-5">
                                 <label for="disponibilidad" class="form-label mr-4 ">Disponible para</label>
@@ -171,9 +171,7 @@ require_once './checar_sesion.php';
                         <div class="col-md-12 mt-2">
                             <select name="libros-disponible"  class="form-select" aria-label="Default select example" id="avaliable-books">
                                 <option selected>Selecciona un libro disponible </option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                               
                             </select>
                         </div>
 
@@ -187,8 +185,8 @@ require_once './checar_sesion.php';
 
                         <h5>Buscar usuario </h5>
                         <div id="alert" class="  mt-2 mb-2" style="  display: none; ">
-                            <i id="alert-icon-back" class="" style="color: white; padding:  10px ;"></i>
-                            <h5 id="alert-text" style="color: white; padding: 10px; margin: 0"> </h5>
+                            <i id="alert-icon-back" class="" style="color: white; padding:  5px ;"></i>
+                            <h5 id="alert-text" style="color: white; padding: 5px; margin: 0"> </h5>
                         </div>
 
                         <form id="form-user" class="row g-3" action="#">

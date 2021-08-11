@@ -28,8 +28,8 @@ require_once './checar_sesion.php';
                         <h2 style="color:#0762c9">Datos del usuario</h2>
                         <h5>Buscar usuario </h5>
                         <div id="alert" class="  mt-2 mb-2" style="  display: none; ">
-                            <i id="alert-icon-back" class="" style="color: white; padding:  10px ;"></i>
-                            <h5 id="alert-text" style="color: white; padding: 10px; margin: 0"> </h5>
+                            <i id="alert-icon-back" class="" style="color: white; padding: 5px ;"></i>
+                            <h5 id="alert-text" style="color: white; padding: 5px; margin: 0"> </h5>
                         </div>
 
                         <form id="form-user" class="row g-3" action="#">
