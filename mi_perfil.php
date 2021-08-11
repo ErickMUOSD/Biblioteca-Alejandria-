@@ -47,14 +47,14 @@ if (empty($segment->get('id_usuario')) || !is_numeric($segment->get('id_usuario'
                         <table class="table ">
                             <thead>
                                 <tr>
-                                    <th >Id usuario</th>
-                                    <th >Nombre</th>
+                                    <th>Id usuario</th>
                                     <th>Titulo</th>
-                                    <th >Salida</th>
-                                    <th >Vencimiento</th>
-                                    <th >Cantidad de libros</th>
-                                    <th >&nbsp;</th>
-                                    <th >&nbsp;</th>
+                                    <th>Nombre</th>
+
+                                    <th>Salida</th>
+                                    <th>Vencimiento</th>
+                                    <th style="width: 5%;">Cantidad de libros</th>
+
                                 </tr>
                             </thead>
                             <tbody>
