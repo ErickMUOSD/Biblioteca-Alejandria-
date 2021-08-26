@@ -96,7 +96,7 @@ require_once './checar_sesion.php';
                                 <label for="can3tidad_libros" class="form-label mr-4 ">Cantidad libros.</label>
                                 <input name="cantidad_libros" id="cantidad_libros" type="text" class="form-control" placeholder="Cantidad libros" aria-label="Username" required pattern="[0-9]+">
                             </div>
-                           
+
                             <div class="col-md-3">
                                 <label for="precio" class="form-label mr-4 ">Precio</label>
                                 <input name="precio" id="precio" type="text" class="form-control" placeholder="Precio " aria-label="Username" required pattern='^\d+(?:\.\d{0,2})$'>
@@ -112,7 +112,7 @@ require_once './checar_sesion.php';
                             <div class="col-md-5">
                                 <label for="foto" class="form-label">Foto</label>
 
-                                <input class="form-control " type="file" id="foto" name="foto"  accept="image/*">
+                                <input class="form-control " type="file" id="foto" name="foto" accept="image/*">
                             </div>
                             <div class="col-md-5">
                                 <label for="disponibilidad" class="form-label mr-4 ">Disponible para</label>
@@ -151,6 +151,13 @@ require_once './checar_sesion.php';
                                     </span>Calcular libros disponibles </button>
                             </div>
 
+                            <div style=" display: flex;
+    align-items: center;
+    justify-content: center;" class="col-md-4 mt-4">
+                                <a href="index.php" style="    background-color: rgba(243, 98, 98, 0.1);
+    border: 1px solid red;" class="btn btn-sm">Cancelar</a>
+                            </div>
+
                         </form>
 
 
@@ -169,9 +176,9 @@ require_once './checar_sesion.php';
                         <h5>Libro a llevar </h5>
                         <P class='fw-lighter m-0 '>Los resultados son calculados en base a las condiciones del libro y sus datos.</P>
                         <div class="col-md-12 mt-2">
-                            <select name="libros-disponible"  class="form-select" aria-label="Default select example" id="avaliable-books">
+                            <select name="libros-disponible" class="form-select" aria-label="Default select example" id="avaliable-books">
                                 <option selected>Selecciona un libro disponible </option>
-                               
+
                             </select>
                         </div>
 

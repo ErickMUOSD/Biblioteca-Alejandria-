@@ -14,9 +14,6 @@ if ('POST' == $_SERVER['REQUEST_METHOD'] && isset($_POST['correo']) && isset($_P
         header('Location: login.php?error=true');
         exit;
     }
-
-    //password_verify($_POST['contrasena'], $usuario['contrasena']
-    //$_POST['contrasena'] == $usuario['contrasena']
     if (password_verify($_POST['contrasena'], $usuario['contrasena'])) {
        
         $session_factory = new Aura\Session\SessionFactory;

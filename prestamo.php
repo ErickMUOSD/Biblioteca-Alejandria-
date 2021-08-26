@@ -1,4 +1,3 @@
-
 <?php
 require_once './checar_sesion.php';
 
@@ -33,7 +32,7 @@ require_once './checar_sesion.php';
                         </div>
 
                         <form id="form-user" class="row g-3" action="#">
-                          
+
 
                             <div class="col-md-4">
                                 <label for="nombre" class="form-label">Nombre</label>
@@ -118,6 +117,13 @@ fin;
                                         post_add
                                     </span>Agregar</button>
                             </div> -->
+
+                            <div class="col-md-5">
+                                <a  href="index.php" type="submit" style="    background-color: rgba(243, 98, 98, 0.1);
+    border: 1px solid red;" id="btn-prestamo" class=" btn "> Cancelar</a>
+                            </div>
+
+
                         </form>
                     </div>
 
@@ -148,7 +154,7 @@ fin;
                                 <p class='fw-lighter'> Autor: <span class="fw-normal" id="avaliable-modal"> <?php echo "{$_GET['autor']}"; ?></span></p>
                                 <p class='fw-lighter'> Total a llevar: <span class="fw-normal" id="avaliable-modal">1 </span></p>
                                 <p class='fw-lighter'>Precio: $<span class="fw-bold" style="color:#07ab49;" id="price-modal"> <?php echo "{$_GET['precio']}"; ?> </span></p>
-                                <p class='fw-lighter' >Cantidad de libros: <span class="fw-bold"  id="cant-modal"> <?php echo "{$_GET['cantidad_libro']}"; ?> </span></p>
+                                <p class='fw-lighter'>Cantidad de libros: <span class="fw-bold" id="cant-modal"> <?php echo "{$_GET['cantidad_libro']}"; ?> </span></p>
                             </div>
                         </div>
 
